@@ -1,0 +1,124 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.46.0",
+  "hash": "52bcf14eae2808effd0a",
+  "publicPath": "/static/",
+  "outputPath": "/home/sam/Documents/Sites/kincare-frontity/build/static",
+  "assetsByChunkName": {
+    "kincare-frontity": [
+      "kincare-frontity.module.js",
+      "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "0c8e566afc12bb9ba65f.hot-update.json",
+      "size": 58,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/logo.png",
+      "size": 12480,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/kincare-theme/src/img/logo.png"
+      },
+      "emitted": false
+    },
+    {
+      "name": "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js",
+      "size": 45551,
+      "chunks": [
+        "kincare-frontity"
+      ],
+      "chunkNames": [
+        "kincare-frontity"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "kincare-frontity.module.js",
+      "size": 6757359,
+      "chunks": [
+        "kincare-frontity"
+      ],
+      "chunkNames": [
+        "kincare-frontity"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "kincare-frontity": {
+      "chunks": [
+        "kincare-frontity"
+      ],
+      "assets": [
+        "kincare-frontity.module.js",
+        "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "kincare-frontity": {
+      "chunks": [
+        "kincare-frontity"
+      ],
+      "assets": [
+        "kincare-frontity.module.js",
+        "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": "kincare-frontity",
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 1736828,
+      "names": [
+        "kincare-frontity"
+      ],
+      "files": [
+        "kincare-frontity.module.js",
+        "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+      ],
+      "hash": "4f87057fade7309034c3",
+      "siblings": [],
+      "parents": [],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [],
+      "filteredModules": 0,
+      "origins": []
+    }
+  ],
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": [],
+  "generator": "loadable-components"
+}

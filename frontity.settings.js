@@ -3,13 +3,13 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
+      "title": "KinCare at Home",
       "description": "WordPress installation for Frontity development"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "kincare-theme",
       "state": {
         "theme": {
           "menu": [
@@ -18,25 +18,33 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Services",
+              "/services"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "Resources",
+              "/resources"
             ],
             [
-              "Japan",
-              "/tag/japan/"
+              "Testimonials",
+              "/testimonials"
             ],
             [
-              "About Us",
-              "/about-us/"
+              "Contact Us",
+              "/contact-us"
             ]
           ],
-          "featured": {
-            "showOnList": false,
-            "showOnPost": false
+          "colors": {
+            "darkGray": "#333333",
+            "darkBlue": "#2A58A7",
+            "orange": "#F2822C",
+            "lightGrayBlue": "#ECF3F9"
+          },
+          "weight": {
+            "light": 300,
+            "regular": 400,
+            "bold": 700,
+            "black": 900
           }
         }
       }
@@ -45,12 +53,16 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "http://54.145.36.193",
+          "api": "http://54.145.36.193/wp-json",
+          "homepage": "/home",
+          "postsPage": "/blog"
         }
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "@frontity/yoast"
   ]
 };
 
