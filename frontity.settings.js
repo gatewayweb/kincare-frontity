@@ -53,8 +53,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://54.145.36.193",
-          "api": "http://54.145.36.193/wp-json",
+          "url": "https://kincare.gatewayweb.net",
+          "api": "https://kincare.gatewayweb.net/wp-json",
           "homepage": "/home",
           "postsPage": "/blog"
         }
