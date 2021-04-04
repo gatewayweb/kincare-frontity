@@ -1,0 +1,15 @@
+webpackHotUpdate("kincare-frontity",{
+
+/***/ "./packages/kincare-theme/src/components/parts/Loading.js":
+/*!****************************************************************!*\
+  !*** ./packages/kincare-theme/src/components/parts/Loading.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-loading */ \"./node_modules/react-loading/dist/react-loading.js\");\n/* harmony import */ var react_loading__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_loading__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/react/jsx-runtime */ \"./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js\");\nconst Loading=({state})=>{return Object(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__[\"jsx\"])(\"div\",{children:Object(_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__[\"jsx\"])(react_loading__WEBPACK_IMPORTED_MODULE_1___default.a,{type:\"spin\",color:\"#000\",width:75,height:75})});};/* harmony default export */ __webpack_exports__[\"default\"] = (Loading);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wYWNrYWdlcy9raW5jYXJlLXRoZW1lL3NyYy9jb21wb25lbnRzL3BhcnRzL0xvYWRpbmcuanM/YThjZiJdLCJuYW1lcyI6WyJMb2FkaW5nIiwic3RhdGUiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUdBLEtBQU1BLFFBQU8sQ0FBRyxDQUFDLENBQUVDLEtBQUYsQ0FBRCxHQUFlLENBQzNCLE1BQ0ksd0ZBQ0ksdUVBQUMsb0RBQUQsRUFBYyxJQUFJLENBQUMsTUFBbkIsQ0FBMEIsS0FBSyxDQUFDLE1BQWhDLENBQXVDLEtBQUssQ0FBRSxFQUE5QyxDQUFrRCxNQUFNLENBQUUsRUFBMUQsRUFESixFQURKLENBS0gsQ0FORCxDQVFlRCxzRUFBZiIsImZpbGUiOiIuL3BhY2thZ2VzL2tpbmNhcmUtdGhlbWUvc3JjL2NvbXBvbmVudHMvcGFydHMvTG9hZGluZy5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBSZWFjdExvYWRpbmcgZnJvbSAncmVhY3QtbG9hZGluZydcblxuY29uc3QgTG9hZGluZyA9ICh7IHN0YXRlIH0pID0+IHtcbiAgICByZXR1cm4gKFxuICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPFJlYWN0TG9hZGluZyB0eXBlPVwic3BpblwiIGNvbG9yPVwiIzAwMFwiIHdpZHRoPXs3NX0gaGVpZ2h0PXs3NX0gLz5cbiAgICAgICAgPC9kaXY+XG4gICAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBMb2FkaW5nIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./packages/kincare-theme/src/components/parts/Loading.js\n");
+
+/***/ })
+
+})

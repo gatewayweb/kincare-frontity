@@ -5,15 +5,7 @@ import logo from '../../img/logo.png'
 import Navigation from '../parts/Navigation'
 import Hero from '../parts/Hero'
 
-const Header = ({ data, state }) => {
-
-    const [page, setPage] = useState({})
-
-    useEffect(() => {
-        if(!data.isFetching) {
-            setPage(state.source[data.type][data.id])
-        }
-    }, [ data.isFetching, data.id ])
+const Header = ({ page }) => {
 
     return (
         <header

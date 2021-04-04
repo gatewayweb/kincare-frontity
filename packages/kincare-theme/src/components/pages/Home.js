@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect, styled } from 'frontity'
+import { Waypoint } from 'react-waypoint'
+import gsap from 'gsap'
 
-const Home = ({ state, data }) => {
+import ContactForm from '../parts/ContactForm'
+
+const Home = ({ state, page }) => {
+    const [populated, setPopulated] = useState({
+        what_we_offer: false,
+        services: false,
+        mission: false,
+        why_us: false
+    })
+
+    const { who_we_are, what_we_offer, services, our_mission, why_us } = page.acf
 
     let sectionPadding = '48px 32px'
 
@@ -20,7 +32,7 @@ const Home = ({ state, data }) => {
         }
     `
 
-    const WhatWeOffer = styled.article`
+    const WhatWeOffer = styled.section`
         padding:${sectionPadding};
         h2 {
             font-weight:bold;
@@ -36,7 +48,7 @@ const Home = ({ state, data }) => {
         }
     `
 
-    const Services = styled.article`
+    const Services = styled.section`
         padding:${sectionPadding};
         background-color:${state.theme.colors.lightGrayBlue};
         position:relative;
@@ -52,7 +64,8 @@ const Home = ({ state, data }) => {
             top:-2px;
         }
     `
-    const ServiceBox = styled.div`
+
+    const ServiceBox = styled.article`
         padding:16px;
         background-color:#ffffff;
         border-radius:8px;
@@ -83,8 +96,70 @@ const Home = ({ state, data }) => {
         }
     `
 
-    const page = state.source[data.type][data.id]
-    const { who_we_are, what_we_offer, services } = page.acf
+    const Mission = styled.section`
+        background-color:${state.theme.colors.darkBlue};
+        padding:${sectionPadding};
+        color:#ffffff;
+        h2 {
+            font-weight:800;
+            &:after {
+                width:80px;
+                height:10px;
+            }
+        }
+    `
+
+    const WhyUs = styled.section`
+        padding:${sectionPadding};
+        h2 {
+            font-weight:800;
+        }
+    `
+
+    const WhyUsBox = styled.article`
+        padding:40px 30px;
+        background-color:${state.theme.colors.lightGrayBlue};
+        border-radius:8px;
+        text-align:center;
+        h3 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 17px;
+            margin: 0;
+        }
+        img {
+            margin-bottom:10px;
+        }
+    `
+
+    const ContactSection = styled.section`
+        padding:${sectionPadding};
+        background-color:${state.theme.colors.lightGrayBlue};
+    `
+    
+    const animateSection = (section) => {
+        switch(section) {
+            case 'what-we-offer':
+                if(!populated.what_we_offer) {
+                    gsap.from(`.what-we-offer .img-fluid`, { x: -300, opacity: 0, duration: 0.5 })
+                    gsap.from('.what-we-offer h2, .what-we-offer p', { x: -400, opacity: 0, duration: 0.35, stagger: 0.15, onComplete: () => {
+                        setPopulated(prevState => {
+                            return { ...prevState, what_we_offer: true }
+                        })
+                    }})
+                }
+                break
+            case 'services':
+                if(!populated.services) {
+                    gsap.from('.service-box', { x: -500, y: -500, opacity: 0, duration: 0.5, stagger: 0.15 })
+                }
+                break
+        }
+    }
 
     return (
         <>
@@ -98,46 +173,101 @@ const Home = ({ state, data }) => {
                     </div>
                 </div>
             </WhoWeAre>
-            <WhatWeOffer>
+            <Waypoint onEnter={() => animateSection('what-we-offer')}>
+                <WhatWeOffer className="what-we-offer">
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col col-12 col-xl-4">
+                                <img className="img-fluid" src={what_we_offer.image} />
+                            </div>
+                            <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
+                                <h2>{what_we_offer.title}</h2>
+                                <p>{what_we_offer.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                </WhatWeOffer>
+            </Waypoint>
+            <Waypoint onEnter={() => animateSection('services')}>
+                <Services>
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            <div className="col-12 col-md-6 col-xl-3">
+                                <ServiceBox className="service-box">
+                                    <img src={services.service_1.icon} />
+                                    <h3>{services.service_1.name}</h3>
+                                    <p>{services.service_1.description}</p>
+                                </ServiceBox>
+                            </div>
+                            <div className="col-12 col-md-6 col-xl-3">
+                                <ServiceBox className="service-box">
+                                    <img src={services.service_2.icon} />
+                                    <h3>{services.service_2.name}</h3>
+                                    <p>{services.service_2.description}</p>
+                                </ServiceBox>
+                            </div>
+                            <div className="col-12 col-md-6 col-xl-3">
+                                <ServiceBox className="service-box">
+                                    <img src={services.service_3.icon} />
+                                    <h3>{services.service_3.name}</h3>
+                                    <p>{services.service_3.description}</p>
+                                </ServiceBox>
+                            </div>
+                        </div>
+                    </div>
+                </Services>
+            </Waypoint>
+            <Mission>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col col-12 col-xl-4">
-                            <img className="img-fluid" src={what_we_offer.image} />
-                        </div>
-                        <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
-                            <h2>{what_we_offer.title}</h2>
-                            <p>{what_we_offer.content}</p>
+                        <div className="col col-12 col-xl-8">
+                            <h2>{our_mission.title}</h2>
+                            <p>{our_mission.content}</p>
                         </div>
                     </div>
                 </div>
-            </WhatWeOffer>
-            <Services>
+            </Mission>
+            <WhyUs>
                 <div className="container">
                     <div className="row justify-content-center">
+                        <div className="col col-12 col-xl-8 text-center">
+                            <h2>{why_us.title}</h2>
+                            <p>{why_us.content}</p>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center pt-4">
                         <div className="col-12 col-md-6 col-xl-3">
-                            <ServiceBox>
-                                <img src={services.service_1.icon} />
-                                <h3>{services.service_1.name}</h3>
-                                <p>{services.service_1.description}</p>
-                            </ServiceBox>
+                            <WhyUsBox>
+                                <img src={why_us.reason_1.icon} />
+                                <h3>{why_us.reason_1.name}</h3>
+                                <p>{why_us.reason_1.description}</p>
+                            </WhyUsBox>
                         </div>
                         <div className="col-12 col-md-6 col-xl-3">
-                            <ServiceBox>
-                                <img src={services.service_2.icon} />
-                                <h3>{services.service_2.name}</h3>
-                                <p>{services.service_2.description}</p>
-                            </ServiceBox>
+                            <WhyUsBox>
+                                <img src={why_us.reason_2.icon} />
+                                <h3>{why_us.reason_2.name}</h3>
+                                <p>{why_us.reason_2.description}</p>
+                            </WhyUsBox>
                         </div>
                         <div className="col-12 col-md-6 col-xl-3">
-                            <ServiceBox>
-                                <img src={services.service_3.icon} />
-                                <h3>{services.service_3.name}</h3>
-                                <p>{services.service_3.description}</p>
-                            </ServiceBox>
+                            <WhyUsBox>
+                                <img src={why_us.reason_3.icon} />
+                                <h3>{why_us.reason_3.name}</h3>
+                                <p>{why_us.reason_3.description}</p>
+                            </WhyUsBox>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col pt-5 text-center">
+                            <a href={why_us.cta.link_to}>{why_us.cta.link_text}</a>
                         </div>
                     </div>
                 </div>
-            </Services>
+            </WhyUs>
+            <ContactSection>
+                <ContactForm />
+            </ContactSection>
         </>
     )
 }

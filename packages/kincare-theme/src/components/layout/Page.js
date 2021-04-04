@@ -10,12 +10,12 @@ import Resources from '../pages/Resources'
 import Testimonials from '../pages/Testimonials'
 import Contact from '../pages/Contact'
 
-const Page = ({ state }) => {
-    const data = state.source.get(state.router.link)
+const Page = ({ state, data }) => {
+    const page = state.source[data.type][data.id]
     
     function renderPage() {
         switch(data.link) {
-            case '/': return <Home data={data} />
+            case '/': return <Home data={data} page={page} />
             case '/services/': return <Services data={data} />
             case '/resources/': return <Resources data={data} />
             case '/testimonials/': return <Testimonials data={data} />
@@ -27,12 +27,11 @@ const Page = ({ state }) => {
         <>
             <div className="row">
                 <div className="col">
-                    <Header data={data} />
+                    <Header data={data} page={page} />
                 </div>
             </div>
             <div className="row">
                 <div className="col">
-                    {data.isFetching && <Loading /> }
                     {data.isPage && renderPage()}
                 </div>
             </div>

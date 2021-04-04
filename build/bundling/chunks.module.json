@@ -2,18 +2,18 @@
   "errors": [],
   "warnings": [],
   "version": "4.46.0",
-  "hash": "52bcf14eae2808effd0a",
+  "hash": "32e14c12ed7fa1f08684",
   "publicPath": "/static/",
-  "outputPath": "/home/sam/Documents/Sites/kincare-frontity/build/static",
+  "outputPath": "/home/sam/Sites/kincare-frontity/build/static",
   "assetsByChunkName": {
     "kincare-frontity": [
       "kincare-frontity.module.js",
-      "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+      "kincare-frontity.40a5d1cd3a3797a6ab3e.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "0c8e566afc12bb9ba65f.hot-update.json",
+      "name": "40a5d1cd3a3797a6ab3e.hot-update.json",
       "size": 58,
       "chunks": [],
       "chunkNames": [],
@@ -34,8 +34,8 @@
       "emitted": false
     },
     {
-      "name": "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js",
-      "size": 45551,
+      "name": "kincare-frontity.40a5d1cd3a3797a6ab3e.hot-update.js",
+      "size": 3370,
       "chunks": [
         "kincare-frontity"
       ],
@@ -50,7 +50,7 @@
     },
     {
       "name": "kincare-frontity.module.js",
-      "size": 6757359,
+      "size": 7967995,
       "chunks": [
         "kincare-frontity"
       ],
@@ -69,7 +69,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+        "kincare-frontity.40a5d1cd3a3797a6ab3e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -82,7 +82,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+        "kincare-frontity.40a5d1cd3a3797a6ab3e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -94,15 +94,15 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 1736828,
+      "size": 2111446,
       "names": [
         "kincare-frontity"
       ],
       "files": [
         "kincare-frontity.module.js",
-        "kincare-frontity.0c8e566afc12bb9ba65f.hot-update.js"
+        "kincare-frontity.40a5d1cd3a3797a6ab3e.hot-update.js"
       ],
-      "hash": "4f87057fade7309034c3",
+      "hash": "8c4519aa5bac5d70f2cf",
       "siblings": [],
       "parents": [],
       "children": [],

@@ -25,7 +25,10 @@
     "@frontity/yoast": "^2.1.1",
     "bootstrap": "^5.0.0-beta3",
     "frontity": "^1.14.3",
+    "gsap": "^3.6.1",
     "kincare-theme": "file:packages/kincare-theme",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "react-loading": "^2.0.3",
+    "react-waypoint": "^9.0.3"
   }
 }
