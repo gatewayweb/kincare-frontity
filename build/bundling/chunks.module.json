@@ -1,39 +1,19 @@
 {
-  "errors": [
-    "./node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@emotion/react/jsx-runtime/dist/emotion-react-jsx-runtime.browser.esm.js'\n @ ./packages/kincare-theme/src/components/index.js 1:322-374 1:374-428 1:428-490 1:567-572 1:573-582 1:594-598 1:2248-2252 1:3916-3920 1:3938-3943 1:3962-3966 1:3999-4003\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/components/link/index.tsx\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/components/link/index.tsx'\n @ ./packages/kincare-theme/src/components/parts/Navigation.js 1:339-383 1:4883-4887\n @ ./packages/kincare-theme/src/components/layout/Header.js\n @ ./packages/kincare-theme/src/components/layout/Page.js\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/components/switch.tsx\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/components/switch.tsx'\n @ ./packages/kincare-theme/src/components/index.js 1:73-121 1:3944-3950\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/core/src/client/index.tsx\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/core/src/client/index.tsx'\n @ ./build/bundling/entry-points/kincare-frontity/client.ts 1:0-46 1:552-558 1:589-1428 1:793-1427 1:811-847\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/html2react/src/index.ts\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/html2react/src/index.ts'\n @ ./build/bundling/entry-points/kincare-frontity/client.ts 1:251-324 1:483-511 1:589-1428 1:793-1427 1:1132-1173\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/tiny-router/src/index.ts\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/tiny-router/src/index.ts'\n @ ./build/bundling/entry-points/kincare-frontity/client.ts 1:176-251 1:453-482 1:589-1428 1:793-1427 1:1046-1088\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/wp-source/src/index.ts\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/wp-source/src/index.ts'\n @ ./build/bundling/entry-points/kincare-frontity/client.ts 1:105-176 1:425-452 1:589-1428 1:793-1427 1:961-1001\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/@frontity/yoast/src/index.ts\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/@frontity/yoast/src/index.ts'\n @ ./build/bundling/entry-points/kincare-frontity/client.ts 1:324-387 1:512-535 1:589-1428 1:793-1427 1:1212-1248\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/frontity/dist/src/index.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/frontity/dist/src/index.js'\n @ ./packages/kincare-theme/src/components/index.js 1:25-73 1:599-605 1:627-630 1:2253-2259 1:2281-2284 1:4064-4071\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/gsap/index.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/gsap/index.js'\n @ ./packages/kincare-theme/src/components/pages/Home.js 1:1237-1260 1:115431-115435 1:115502-115506 1:115763-115767\n @ ./packages/kincare-theme/src/components/layout/Page.js\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/react-loading/dist/react-loading.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/react-loading/dist/react-loading.js'\n @ ./packages/kincare-theme/src/components/parts/Loading.js 1:302-342 1:2178-2190\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/react-waypoint/es/index.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/react-waypoint/es/index.js'\n @ ./packages/kincare-theme/src/components/pages/Home.js 1:1200-1237 1:116140-116148 1:116675-116683\n @ ./packages/kincare-theme/src/components/layout/Page.js\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/react/index.js\nModule build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/react/index.js'\n @ ./packages/kincare-theme/src/components/index.js 1:0-25\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/bootstrap/dist/css/bootstrap.min.css\nModule build failed (from ./node_modules/raw-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/bootstrap/dist/css/bootstrap.min.css'\n @ ./packages/kincare-theme/src/components/index.js 1:121-184 1:2292-2304\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/core-js/modules/es.array.iterator.js\nModule build failed: Error: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/core-js/modules/es.array.iterator.js'\n @ ./packages/kincare-theme/src/components/pages/Home.js 1:978-1023\n @ ./packages/kincare-theme/src/components/layout/Page.js\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/core-js/modules/es.string.replace.js\nModule build failed: Error: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/core-js/modules/es.string.replace.js'\n @ ./packages/kincare-theme/src/helpers/css.js 1:0-45\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/core-js/modules/es.symbol.description.js\nModule build failed: Error: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/core-js/modules/es.symbol.description.js'\n @ ./packages/kincare-theme/src/components/pages/Home.js 1:1079-1128\n @ ./packages/kincare-theme/src/components/layout/Page.js\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "./node_modules/core-js/modules/web.dom-collections.iterator.js\nModule build failed: Error: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/core-js/modules/web.dom-collections.iterator.js'\n @ ./packages/kincare-theme/src/components/pages/Home.js 1:1023-1079\n @ ./packages/kincare-theme/src/components/layout/Page.js\n @ ./packages/kincare-theme/src/components/index.js\n @ ./packages/kincare-theme/src/index.js\n @ ./build/bundling/entry-points/kincare-frontity/client.ts\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts",
-    "(webpack)-hot-middleware/client.js\nModule build failed: Error: ENOENT: no such file or directory, open '/home/sam/Sites/kincare-frontity/node_modules/webpack-hot-middleware/client.js'\n @ multi webpack-hot-middleware/client ./build/bundling/entry-points/kincare-frontity/client.ts kincare-frontity[0]"
-  ],
+  "errors": [],
   "warnings": [],
   "version": "4.46.0",
-  "hash": "1484bd14d4a9accbcbdf",
+  "hash": "db8ddb48e5ac8c7588c3",
   "publicPath": "/static/",
   "outputPath": "/home/sam/Sites/kincare-frontity/build/static",
   "assetsByChunkName": {
     "kincare-frontity": [
       "kincare-frontity.module.js",
-      "kincare-frontity.32e14c12ed7fa1f08684.hot-update.js"
+      "kincare-frontity.512a3a9d34773d085291.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "32e14c12ed7fa1f08684.hot-update.json",
+      "name": "512a3a9d34773d085291.hot-update.json",
       "size": 58,
       "chunks": [],
       "chunkNames": [],
@@ -54,8 +34,8 @@
       "emitted": false
     },
     {
-      "name": "kincare-frontity.32e14c12ed7fa1f08684.hot-update.js",
-      "size": 39019,
+      "name": "kincare-frontity.512a3a9d34773d085291.hot-update.js",
+      "size": 14658,
       "chunks": [
         "kincare-frontity"
       ],
@@ -70,7 +50,7 @@
     },
     {
       "name": "kincare-frontity.module.js",
-      "size": 276245,
+      "size": 8121303,
       "chunks": [
         "kincare-frontity"
       ],
@@ -89,7 +69,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.32e14c12ed7fa1f08684.hot-update.js"
+        "kincare-frontity.512a3a9d34773d085291.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -102,7 +82,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.32e14c12ed7fa1f08684.hot-update.js"
+        "kincare-frontity.512a3a9d34773d085291.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -114,15 +94,15 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 146887,
+      "size": 2149459,
       "names": [
         "kincare-frontity"
       ],
       "files": [
         "kincare-frontity.module.js",
-        "kincare-frontity.32e14c12ed7fa1f08684.hot-update.js"
+        "kincare-frontity.512a3a9d34773d085291.hot-update.js"
       ],
-      "hash": "6b1b080900639a9ad446",
+      "hash": "4648e48e74dcbd04174d",
       "siblings": [],
       "parents": [],
       "children": [],

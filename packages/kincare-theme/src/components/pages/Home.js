@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { connect, styled } from 'frontity'
-import { Waypoint } from 'react-waypoint'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import ContactForm from '../parts/ContactForm'
 
 const Home = ({ state, page }) => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const homeRefs = useRef(null)
+
     const [populated, setPopulated] = useState({
         what_we_offer: false,
         services: false,
@@ -114,6 +118,14 @@ const Home = ({ state, page }) => {
         h2 {
             font-weight:800;
         }
+        .cta {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 29px;
+            text-align: center;
+            color:${state.theme.colors.orange};
+            text-decoration:none;
+        }
     `
 
     const WhyUsBox = styled.article`
@@ -140,29 +152,51 @@ const Home = ({ state, page }) => {
         padding:${sectionPadding};
         background-color:${state.theme.colors.lightGrayBlue};
     `
-    
-    const animateSection = (section) => {
-        switch(section) {
-            case 'what-we-offer':
-                if(!populated.what_we_offer) {
-                    gsap.from(`.what-we-offer .img-fluid`, { x: -300, opacity: 0, duration: 0.5 })
-                    gsap.from('.what-we-offer h2, .what-we-offer p', { x: -400, opacity: 0, duration: 0.35, stagger: 0.15, onComplete: () => {
-                        setPopulated(prevState => {
-                            return { ...prevState, what_we_offer: true }
-                        })
-                    }})
+
+    useEffect(() => {
+        gsap.fromTo(homeRefs.current.querySelectorAll('.service-box'),
+            {
+                x: -500,
+                y: 500,
+                opacity: 0
+            },
+            {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                duration: 0.75,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: document.getElementById('services-trigger'),
+                    start: 'top bottom'
                 }
-                break
-            case 'services':
-                if(!populated.services) {
-                    gsap.from('.service-box', { x: -500, y: -500, opacity: 0, duration: 0.5, stagger: 0.15 })
+            }
+        )
+        
+        gsap.fromTo(homeRefs.current.querySelectorAll('.why-us-box'),
+            {
+                rotation: 90,
+                opacity: 0,
+                scale: 0.5
+            },
+            {
+                rotation: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                stagger: 0.15,
+                scrollTrigger: {
+                    trigger: document.getElementById('why-us-trigger'),
+                    start: 'top bottom'
                 }
-                break
-        }
-    }
+            }
+        )
+
+    }, [])
 
     return (
-        <>
+        <div ref={homeRefs}>
+
             <WhoWeAre>
                 <div className="container">
                     <div className="row">
@@ -173,50 +207,50 @@ const Home = ({ state, page }) => {
                     </div>
                 </div>
             </WhoWeAre>
-            <Waypoint onEnter={() => animateSection('what-we-offer')}>
-                <WhatWeOffer className="what-we-offer">
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col col-12 col-xl-4">
-                                <img className="img-fluid" src={what_we_offer.image} />
-                            </div>
-                            <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
-                                <h2>{what_we_offer.title}</h2>
-                                <p>{what_we_offer.content}</p>
-                            </div>
+            
+            <WhatWeOffer className="what-we-offer">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col col-12 col-xl-4">
+                            <img className="img-fluid" src={what_we_offer.image} />
+                        </div>
+                        <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
+                            <h2>{what_we_offer.title}</h2>
+                            <p>{what_we_offer.content}</p>
                         </div>
                     </div>
-                </WhatWeOffer>
-            </Waypoint>
-            <Waypoint onEnter={() => animateSection('services')}>
-                <Services>
-                    <div className="container">
-                        <div className="row justify-content-center">
-                            <div className="col-12 col-md-6 col-xl-3">
-                                <ServiceBox className="service-box">
-                                    <img src={services.service_1.icon} />
-                                    <h3>{services.service_1.name}</h3>
-                                    <p>{services.service_1.description}</p>
-                                </ServiceBox>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-3">
-                                <ServiceBox className="service-box">
-                                    <img src={services.service_2.icon} />
-                                    <h3>{services.service_2.name}</h3>
-                                    <p>{services.service_2.description}</p>
-                                </ServiceBox>
-                            </div>
-                            <div className="col-12 col-md-6 col-xl-3">
-                                <ServiceBox className="service-box">
-                                    <img src={services.service_3.icon} />
-                                    <h3>{services.service_3.name}</h3>
-                                    <p>{services.service_3.description}</p>
-                                </ServiceBox>
-                            </div>
+                </div>
+            </WhatWeOffer>
+
+            <Services>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div id="services-trigger"></div>
+                        <div className="col-12 col-md-6 col-xl-3">
+                            <ServiceBox className="service-box">
+                                <img src={services.service_1.icon} />
+                                <h3>{services.service_1.name}</h3>
+                                <p>{services.service_1.description}</p>
+                            </ServiceBox>
+                        </div>
+                        <div className="col-12 col-md-6 col-xl-3">
+                            <ServiceBox className="service-box" ref={homeRefs}>
+                                <img src={services.service_2.icon} />
+                                <h3>{services.service_2.name}</h3>
+                                <p>{services.service_2.description}</p>
+                            </ServiceBox>
+                        </div>
+                        <div className="col-12 col-md-6 col-xl-3">
+                            <ServiceBox className="service-box" ref={homeRefs}>
+                                <img src={services.service_3.icon} />
+                                <h3>{services.service_3.name}</h3>
+                                <p>{services.service_3.description}</p>
+                            </ServiceBox>
                         </div>
                     </div>
-                </Services>
-            </Waypoint>
+                </div>
+            </Services>
+            
             <Mission>
                 <div className="container">
                     <div className="row justify-content-center">
@@ -227,31 +261,33 @@ const Home = ({ state, page }) => {
                     </div>
                 </div>
             </Mission>
+            
             <WhyUs>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col col-12 col-xl-8 text-center">
                             <h2>{why_us.title}</h2>
                             <p>{why_us.content}</p>
+                            <div id="why-us-trigger"></div>
                         </div>
                     </div>
                     <div className="row justify-content-center pt-4">
                         <div className="col-12 col-md-6 col-xl-3">
-                            <WhyUsBox>
+                            <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_1.icon} />
                                 <h3>{why_us.reason_1.name}</h3>
                                 <p>{why_us.reason_1.description}</p>
                             </WhyUsBox>
                         </div>
                         <div className="col-12 col-md-6 col-xl-3">
-                            <WhyUsBox>
+                            <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_2.icon} />
                                 <h3>{why_us.reason_2.name}</h3>
                                 <p>{why_us.reason_2.description}</p>
                             </WhyUsBox>
                         </div>
                         <div className="col-12 col-md-6 col-xl-3">
-                            <WhyUsBox>
+                            <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_3.icon} />
                                 <h3>{why_us.reason_3.name}</h3>
                                 <p>{why_us.reason_3.description}</p>
@@ -260,15 +296,16 @@ const Home = ({ state, page }) => {
                     </div>
                     <div className="row">
                         <div className="col pt-5 text-center">
-                            <a href={why_us.cta.link_to}>{why_us.cta.link_text}</a>
+                            <a className="cta" href={why_us.cta.link_to}>{why_us.cta.link_text}</a>
                         </div>
                     </div>
                 </div>
             </WhyUs>
+            
             <ContactSection>
                 <ContactForm />
             </ContactSection>
-        </>
+        </div>
     )
 }
 
