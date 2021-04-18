@@ -1,8 +1,7 @@
 import React from 'react'
-import { connect } from 'frontity'
+import { connect, Head } from 'frontity'
 
 import Header from './Header'
-import Loading from '../parts/Loading'
 
 import Home from '../pages/Home'
 import Services from '../pages/Services'
@@ -25,6 +24,7 @@ const Page = ({ state, data }) => {
 
     return (
         <>
+            <Head><title>{page.title.rendered} | KinCare at Home</title></Head>
             <div className="row">
                 <div className="col">
                     <Header data={data} page={page} />

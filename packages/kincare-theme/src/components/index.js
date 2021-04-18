@@ -1,5 +1,5 @@
 import React from 'react'
-import { Global, css, styled, connect } from 'frontity';
+import { Global, css, connect } from 'frontity';
 import Switch from '@frontity/components/switch'
 import bootstrapCss from 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,6 +10,7 @@ import Loading from './parts/Loading'
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
+
     return (
         <>
             <Global styles={css(styles)} />
