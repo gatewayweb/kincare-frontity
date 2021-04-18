@@ -156,18 +156,32 @@ const Home = ({ state, page }) => {
     useEffect(() => {
         gsap.fromTo(homeRefs.current.querySelectorAll('.service-box'),
             {
-                x: -500,
                 y: 500,
                 opacity: 0
             },
             {
-                x: 0,
                 y: 0,
                 opacity: 1,
                 duration: 0.75,
-                stagger: 0.2,
+                stagger: 0.25,
                 scrollTrigger: {
                     trigger: document.getElementById('services-trigger'),
+                    start: 'top bottom'
+                }
+            }
+        )
+
+        gsap.fromTo(homeRefs.current.querySelectorAll('.mission'),
+            {
+                y: 500,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.75,
+                scrollTrigger: {
+                    trigger: document.getElementById('mission-trigger'),
                     start: 'top bottom'
                 }
             }
@@ -175,16 +189,13 @@ const Home = ({ state, page }) => {
         
         gsap.fromTo(homeRefs.current.querySelectorAll('.why-us-box'),
             {
-                rotation: 90,
                 opacity: 0,
                 scale: 0.5
             },
             {
-                rotation: 0,
                 opacity: 1,
                 scale: 1,
-                duration: 0.5,
-                stagger: 0.15,
+                duration: 0.75,
                 scrollTrigger: {
                     trigger: document.getElementById('why-us-trigger'),
                     start: 'top bottom'
@@ -251,7 +262,8 @@ const Home = ({ state, page }) => {
                 </div>
             </Services>
             
-            <Mission>
+            <div id="mission-trigger"></div>
+            <Mission className="mission">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col col-12 col-xl-8">

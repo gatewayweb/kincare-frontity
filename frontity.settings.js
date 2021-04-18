@@ -30,6 +30,10 @@ const settings = {
               "/testimonials"
             ],
             [
+              "Careers",
+              "/careers"
+            ],
+            [
               "Contact Us",
               "/contact-us"
             ]
