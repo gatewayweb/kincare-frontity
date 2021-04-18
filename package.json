@@ -19,7 +19,6 @@
   "dependencies": {
     "@frontity/core": "^1.11.1",
     "@frontity/html2react": "^1.6.2",
-    "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.1",
     "@frontity/wp-source": "^1.11.2",
     "@frontity/yoast": "^2.1.1",
@@ -27,8 +26,6 @@
     "frontity": "^1.14.3",
     "gsap": "^3.6.1",
     "kincare-theme": "file:packages/kincare-theme",
-    "node-sass": "^5.0.0",
-    "react-loading": "^2.0.3",
-    "react-waypoint": "^9.0.3"
+    "react-loading": "^2.0.3"
   }
 }

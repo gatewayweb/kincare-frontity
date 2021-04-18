@@ -2,18 +2,18 @@
   "errors": [],
   "warnings": [],
   "version": "4.46.0",
-  "hash": "866299505a9b98ac1c47",
+  "hash": "d27b1c8e6b66dc36550b",
   "publicPath": "/static/",
   "outputPath": "/home/sam/Desktop/Sites/kincare-frontity/build/static",
   "assetsByChunkName": {
     "kincare-frontity": [
       "kincare-frontity.module.js",
-      "kincare-frontity.5becae09cecfda344007.hot-update.js"
+      "kincare-frontity.c152b5122044db41a565.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "5becae09cecfda344007.hot-update.json",
+      "name": "c152b5122044db41a565.hot-update.json",
       "size": 58,
       "chunks": [],
       "chunkNames": [],
@@ -34,8 +34,8 @@
       "emitted": false
     },
     {
-      "name": "kincare-frontity.5becae09cecfda344007.hot-update.js",
-      "size": 159621,
+      "name": "kincare-frontity.c152b5122044db41a565.hot-update.js",
+      "size": 14702,
       "chunks": [
         "kincare-frontity"
       ],
@@ -69,7 +69,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.5becae09cecfda344007.hot-update.js"
+        "kincare-frontity.c152b5122044db41a565.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -82,7 +82,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.5becae09cecfda344007.hot-update.js"
+        "kincare-frontity.c152b5122044db41a565.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -100,7 +100,7 @@
       ],
       "files": [
         "kincare-frontity.module.js",
-        "kincare-frontity.5becae09cecfda344007.hot-update.js"
+        "kincare-frontity.c152b5122044db41a565.hot-update.js"
       ],
       "hash": "86c58b308900663bdfef",
       "siblings": [],
