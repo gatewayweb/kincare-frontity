@@ -29,6 +29,9 @@
 .hero-content {
     z-index:1;
 }
+.header-content {
+    z-index:2;
+}
 
 h1, h2, h1 > *, h2 > * {
     font-family: 'Abhaya Libre', serif;

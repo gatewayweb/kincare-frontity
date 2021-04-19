@@ -4,7 +4,6 @@ import gsap from 'gsap'
 
 const HeroTitle = styled.h1`
     font-size:48px;
-    opacity:0;
     @media (min-width: 992px) {
         font-size:72px;
         line-height:68px;
@@ -17,11 +16,10 @@ const HeroSubtitle = styled.div`
     letter-spacing:2px;
     width:425px;
     max-width:100%;
-    opacity:0;
 `
 
 const animateHero = () => {
-    gsap.fromTo('.hero-animate', { x: -500 }, { opacity: 1, x: 0, duration: 0.75, stagger: 0.25 })
+    gsap.fromTo('.hero-animate', { x: -500 }, { x: 0, duration: 0.75, stagger: 0.25 })
 }
 
 const Hero = ({ hero }) => {

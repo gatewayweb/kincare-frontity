@@ -12,7 +12,7 @@ const Header = ({ page }) => {
             className={`d-flex flex-column kc-header ${page && page.acf && page.acf.hero ? 'kc-hero' : ''}`}
             style={{ backgroundImage:page && page.acf && page.acf.hero ? `url(${page.acf.hero.background_image})` : ''}}
         >
-            <div className="row px-5 hero-content">
+            <div className="row px-5 header-content">
                 <div className="col">
                     <img src={logo} />
                 </div>

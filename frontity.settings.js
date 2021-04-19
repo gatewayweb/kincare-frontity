@@ -40,6 +40,8 @@ const settings = {
           ],
           "colors": {
             "darkGray": "#333333",
+            "mediumGray": "#777777",
+            "lightGray": "#cccccc",
             "darkBlue": "#2A58A7",
             "orange": "#F2822C",
             "lightGrayBlue": "#ECF3F9"

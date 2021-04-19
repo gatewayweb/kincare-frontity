@@ -196,6 +196,7 @@ const Home = ({ state, page }) => {
                 opacity: 1,
                 scale: 1,
                 duration: 0.75,
+                stagger: 0.25,
                 scrollTrigger: {
                     trigger: document.getElementById('why-us-trigger'),
                     start: 'top bottom'
