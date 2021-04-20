@@ -133,6 +133,7 @@ const Home = ({ state, page }) => {
         background-color:${state.theme.colors.lightGrayBlue};
         border-radius:8px;
         text-align:center;
+        margin-bottom:1rem;
         h3 {
             font-size: 28px;
             font-weight: 900;
@@ -145,6 +146,9 @@ const Home = ({ state, page }) => {
         }
         img {
             margin-bottom:10px;
+        }
+        @media (min-width:992px) {
+            margin-bottom:0;
         }
     `
 
@@ -235,24 +239,24 @@ const Home = ({ state, page }) => {
             </WhatWeOffer>
 
             <Services>
-                <div className="container">
+                <div className="container-lg">
                     <div className="row justify-content-center">
                         <div id="services-trigger"></div>
-                        <div className="col-12 col-md-6 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3">
                             <ServiceBox className="service-box">
                                 <img src={services.service_1.icon} />
                                 <h3>{services.service_1.name}</h3>
                                 <p>{services.service_1.description}</p>
                             </ServiceBox>
                         </div>
-                        <div className="col-12 col-md-6 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3">
                             <ServiceBox className="service-box" ref={homeRefs}>
                                 <img src={services.service_2.icon} />
                                 <h3>{services.service_2.name}</h3>
                                 <p>{services.service_2.description}</p>
                             </ServiceBox>
                         </div>
-                        <div className="col-12 col-md-6 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3">
                             <ServiceBox className="service-box" ref={homeRefs}>
                                 <img src={services.service_3.icon} />
                                 <h3>{services.service_3.name}</h3>
@@ -285,21 +289,21 @@ const Home = ({ state, page }) => {
                         </div>
                     </div>
                     <div className="row justify-content-center pt-4">
-                        <div className="col-12 col-md-6 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3">
                             <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_1.icon} />
                                 <h3>{why_us.reason_1.name}</h3>
                                 <p>{why_us.reason_1.description}</p>
                             </WhyUsBox>
                         </div>
-                        <div className="col-12 col-md-6 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3">
                             <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_2.icon} />
                                 <h3>{why_us.reason_2.name}</h3>
                                 <p>{why_us.reason_2.description}</p>
                             </WhyUsBox>
                         </div>
-                        <div className="col-12 col-md-6 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3">
                             <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_3.icon} />
                                 <h3>{why_us.reason_3.name}</h3>

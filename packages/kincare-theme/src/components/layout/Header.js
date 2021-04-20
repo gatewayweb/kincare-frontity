@@ -13,10 +13,10 @@ const Header = ({ page }) => {
             style={{ backgroundImage:page && page.acf && page.acf.hero ? `url(${page.acf.hero.background_image})` : ''}}
         >
             <div className="row px-5 header-content">
-                <div className="col">
+                <div className="col col-3">
                     <img src={logo} />
                 </div>
-                <div className="col d-flex align-items-center justify-content-end">
+                <div className="col col-9 d-flex align-items-center justify-content-end">
                     <Navigation />
                 </div>
             </div>

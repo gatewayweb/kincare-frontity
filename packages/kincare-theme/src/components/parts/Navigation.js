@@ -9,7 +9,7 @@ const stripLink = (string) => {
     return string.replace(/\//ig, '')
 }
 
-const mobileBreakpoint = '768px'
+const mobileBreakpoint = '992px'
 
 const Navigation = ({ state }) => {
 
@@ -27,6 +27,9 @@ const Navigation = ({ state }) => {
         left:0;
         display:none;
         z-index:3;
+        &.show {
+            display:block;
+        }
         @media (min-width: ${mobileBreakpoint}) {
             display:inline-block;
             position:static;
@@ -53,6 +56,7 @@ const Navigation = ({ state }) => {
                 display:inline-block;
                 font-size:18px;
                 padding:0 1rem;
+                border:none;
                 &:after {
                     content: '';
                     display:block;
@@ -112,6 +116,9 @@ const Navigation = ({ state }) => {
         right:1rem;
         top:1rem;
         z-index:2;
+        @media (min-width: ${mobileBreakpoint}) {
+            display:none;
+        }
     `
 
 
@@ -122,11 +129,10 @@ const Navigation = ({ state }) => {
 
     useEffect(() => {
         if(showMobileMenu) {
-            navRef.current.style.display='block'
+            navRef.current.classList.add('show')
         } else {
-            navRef.current.style.display='none'
+            navRef.current.classList.remove('show')
         }
-    
     }, [showMobileMenu])
 
     return (
