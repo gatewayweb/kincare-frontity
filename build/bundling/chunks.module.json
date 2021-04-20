@@ -2,27 +2,13 @@
   "errors": [],
   "warnings": [],
   "version": "4.46.0",
-  "hash": "58027b34cd4a41c0d266",
+  "hash": "0a6b6722b000bc5f1bf5",
   "publicPath": "/static/",
   "outputPath": "/home/sam/Desktop/Sites/kincare-frontity/build/static",
   "assetsByChunkName": {
-    "kincare-frontity": [
-      "kincare-frontity.module.js",
-      "kincare-frontity.3a9820dfcfc31345de63.hot-update.js"
-    ]
+    "kincare-frontity": "kincare-frontity.module.js"
   },
   "assets": [
-    {
-      "name": "3a9820dfcfc31345de63.hot-update.json",
-      "size": 58,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
     {
       "name": "images/logo.png",
       "size": 12480,
@@ -34,23 +20,8 @@
       "emitted": false
     },
     {
-      "name": "kincare-frontity.3a9820dfcfc31345de63.hot-update.js",
-      "size": 41849,
-      "chunks": [
-        "kincare-frontity"
-      ],
-      "chunkNames": [
-        "kincare-frontity"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
       "name": "kincare-frontity.module.js",
-      "size": 8154514,
+      "size": 8151934,
       "chunks": [
         "kincare-frontity"
       ],
@@ -58,7 +29,8 @@
         "kincare-frontity"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true,
+      "isOverSizeLimit": true
     }
   ],
   "filteredAssets": 0,
@@ -68,8 +40,7 @@
         "kincare-frontity"
       ],
       "assets": [
-        "kincare-frontity.module.js",
-        "kincare-frontity.3a9820dfcfc31345de63.hot-update.js"
+        "kincare-frontity.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -81,8 +52,7 @@
         "kincare-frontity"
       ],
       "assets": [
-        "kincare-frontity.module.js",
-        "kincare-frontity.3a9820dfcfc31345de63.hot-update.js"
+        "kincare-frontity.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -91,18 +61,17 @@
   "chunks": [
     {
       "id": "kincare-frontity",
-      "rendered": true,
+      "rendered": false,
       "initial": true,
       "entry": true,
-      "size": 2173225,
+      "size": 2171736,
       "names": [
         "kincare-frontity"
       ],
       "files": [
-        "kincare-frontity.module.js",
-        "kincare-frontity.3a9820dfcfc31345de63.hot-update.js"
+        "kincare-frontity.module.js"
       ],
-      "hash": "4e4d3774c48da51f3b4c",
+      "hash": "92a162a480836c3f8d09",
       "siblings": [],
       "parents": [],
       "children": [],

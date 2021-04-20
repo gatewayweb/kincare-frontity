@@ -15,7 +15,7 @@
     background-size:cover;
     background-position:center center;
 }
-.kc-hero:after {
+.kc-hero:before {
     content: '';
     height:100%;
     width:100%;
@@ -28,9 +28,11 @@
 }
 .hero-content {
     z-index:1;
+    position:relative;
 }
 .header-content {
     z-index:2;
+    position:relative;
 }
 
 h1, h2, h1 > *, h2 > * {

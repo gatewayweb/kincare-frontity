@@ -13,7 +13,7 @@ const mobileBreakpoint = '768px'
 
 const Navigation = ({ state }) => {
 
-    const navRefs = useRef(null)
+    const navRef = useRef(null)
 
     const NavigationList = styled.ul`
         list-style:none;
@@ -25,11 +25,10 @@ const Navigation = ({ state }) => {
         width:100vw;
         top:0;
         left:0;
-        /*transform:translateX(-1000px);*/
-        opacity:0;
+        display:none;
         z-index:3;
-        transition:all 1s;
         @media (min-width: ${mobileBreakpoint}) {
+            display:inline-block;
             position:static;
             background-color:transparent;
             height:auto;
@@ -122,20 +121,18 @@ const Navigation = ({ state }) => {
     }
 
     useEffect(() => {
-        const timeline = gsap.timeline()
         if(showMobileMenu) {
-            timeline.fromTo(navRefs.current.querySelectorAll('#main-navigation'), { translateX: -1000, duration: 0.5 }, { translateX: 0, duration: 0.5, opacity: 1 })
-            // console.log('show')
+            navRef.current.style.display='block'
         } else {
-            timeline.fromTo(navRefs.current.querySelectorAll('#main-navigation'), {translateX:0},{ translateX: -1000, opacity:0, duration: 0.5 })
-            // console.log('hide')
+            navRef.current.style.display='none'
         }
+    
     }, [showMobileMenu])
 
     return (
-        <div ref={navRefs}>
+        <>
             <MobileMenuButton onClick={() => toggleMobileMenu()}>MENU</MobileMenuButton>
-            <NavigationList id="main-navigation">
+            <NavigationList id="main-navigation" ref={navRef}>
                 <NavigationItem className="mobile-logo">
                     <img src={logo} />
                     <button onClick={() => toggleMobileMenu()}>
@@ -146,13 +143,13 @@ const Navigation = ({ state }) => {
                     // console.log(stripLink(state.router.link), stripLink(link[1]))
                     let linkClass = stripLink(link[1]) === stripLink(state.router.link) ? 'active' : ''
                     return (
-                        <NavigationItem key={link[0]}>
+                        <NavigationItem key={link[0]} onClick={() => toggleMobileMenu()}>
                             <Link link={link[1]} className={linkClass}>{link[0]}</Link>
                         </NavigationItem>
                     )
                 })}
             </NavigationList>
-        </div>
+        </>
     )
 }
 

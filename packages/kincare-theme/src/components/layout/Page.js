@@ -25,13 +25,13 @@ const Page = ({ state, data }) => {
     return (
         <>
             <Head><title>{page.title.rendered} | KinCare at Home</title></Head>
-            <div className="row">
-                <div className="col">
+            <div>
+                <div>
                     <Header data={data} page={page} />
                 </div>
             </div>
-            <div className="row">
-                <div className="col">
+            <div>
+                <div>
                     {data.isPage && renderPage()}
                 </div>
             </div>
