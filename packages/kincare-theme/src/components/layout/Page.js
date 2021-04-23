@@ -15,7 +15,7 @@ const Page = ({ state, data }) => {
     function renderPage() {
         switch(data.link) {
             case '/': return <Home data={data} page={page} />
-            case '/services/': return <Services data={data} />
+            case '/services/': return <Services data={data} page={page} />
             case '/resources/': return <Resources data={data} />
             case '/testimonials/': return <Testimonials data={data} />
             case '/contact-us/': return <Contact data={data} />
@@ -25,7 +25,7 @@ const Page = ({ state, data }) => {
     return (
         <>
             <Head><title>{page.title.rendered} | KinCare at Home</title></Head>
-            <div>
+            <div className={`${page && page.acf && page.acf.hero ? '' : 'container'}`}>
                 <div>
                     <Header data={data} page={page} />
                 </div>

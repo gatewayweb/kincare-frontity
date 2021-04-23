@@ -3,7 +3,10 @@ import { styled } from 'frontity'
 import gsap from 'gsap'
 
 const HeroTitle = styled.h1`
-    font-size:48px;
+    font-size:36px;
+    @media (min-width: 768px) {
+        font-size:48px;
+    }
     @media (min-width: 992px) {
         font-size:72px;
         line-height:68px;
@@ -16,6 +19,11 @@ const HeroSubtitle = styled.div`
     letter-spacing:2px;
     width:425px;
     max-width:100%;
+    @media (min-width: 768px) {
+        font-size:18px;
+        line-height:24px;
+        letter-spacing:1px;
+    }
 `
 
 const animateHero = () => {
@@ -23,6 +31,7 @@ const animateHero = () => {
 }
 
 const Hero = ({ hero }) => {
+
     useEffect(() => {
         animateHero()
     }, [])
@@ -30,7 +39,7 @@ const Hero = ({ hero }) => {
     return (
         <>
         {hero ?
-                <div className="col col-12 col-lg-8 col-xxl-4 px-5">
+                <div className="col col-12 col-lg-8 col-xxl-8 px-4 px-md-5">
                     <HeroTitle className="hero-animate">
                         {hero.title}
                         {hero.title_two ?

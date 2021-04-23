@@ -10,10 +10,11 @@
     transition:all 500ms;
 }
 .kc-hero {
-    height:600px;
+    min-height:500px;
     position:relative;
     background-size:cover;
     background-position:center center;
+    text-align:center;
 }
 .kc-hero:before {
     content: '';
@@ -23,9 +24,10 @@
     top:0;
     left:0;
     background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 100%);
+    background: rgba(255,255,255,0.75);
     z-index:0;
 }
+
 .hero-content {
     z-index:1;
     position:relative;
@@ -38,4 +40,22 @@
 h1, h2, h1 > *, h2 > * {
     font-family: 'Abhaya Libre', serif;
     font-weight:800;
+}
+
+.site-logo {
+    width:150px;
+    max-width:100%;
+}
+
+@media (min-width: 768px) {
+    .kc-hero {
+        min-height:600px;
+        text-align:left;
+    }
+    .kc-hero:before {
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 100%);
+    }
+    .site-logo {
+        width:auto;
+    }
 }

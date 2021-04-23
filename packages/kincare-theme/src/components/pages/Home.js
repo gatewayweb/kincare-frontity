@@ -215,8 +215,8 @@ const Home = ({ state, page }) => {
 
             <WhoWeAre>
                 <div className="container">
-                    <div className="row">
-                        <div className="col col-12 text-center">
+                    <div className="row justify-content-center">
+                        <div className="col col-12 col-lg-8 text-center">
                             <h2>{who_we_are.title}</h2>
                             <p>{who_we_are.content}</p>
                         </div>
@@ -231,7 +231,7 @@ const Home = ({ state, page }) => {
                             <img className="img-fluid" src={what_we_offer.image} />
                         </div>
                         <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
-                            <h2>{what_we_offer.title}</h2>
+                            <h2 className="mt-3 mt-md-0">{what_we_offer.title}</h2>
                             <p>{what_we_offer.content}</p>
                         </div>
                     </div>

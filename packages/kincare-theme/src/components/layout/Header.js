@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { connect } from 'frontity'
+import Link from '@frontity/components/link'
 
 import logo from '../../img/logo.png'
 import Navigation from '../parts/Navigation'
@@ -12,20 +13,22 @@ const Header = ({ page }) => {
             className={`container-fluid d-flex flex-column kc-header ${page && page.acf && page.acf.hero ? 'kc-hero' : ''}`}
             style={{ backgroundImage:page && page.acf && page.acf.hero ? `url(${page.acf.hero.background_image})` : ''}}
         >
-            <div className="row px-5 header-content">
-                <div className="col col-3">
-                    <img src={logo} />
+            <div className="container d-flex flex-column flex-grow-1">
+                <div className="row header-content">
+                    <div className="col col-12 col-md-3">
+                        <Link link='/'><img className="site-logo" src={logo} /></Link>
+                    </div>
+                    <div className="col col-12 col-md-9 d-flex align-items-center justify-content-end">
+                        <Navigation />
+                    </div>
                 </div>
-                <div className="col col-9 d-flex align-items-center justify-content-end">
-                    <Navigation />
-                </div>
+                {page && page.acf && page.acf.hero ?
+                    <div className="row flex-grow-1 align-items-center hero-content">
+                        <Hero hero={page.acf.hero} />
+                    </div> :
+                    <></>
+                }
             </div>
-            {page && page.acf && page.acf.hero ?
-                <div className="row flex-grow-1 align-items-center hero-content">
-                    <Hero hero={page.acf.hero} />
-                </div> :
-                <></>
-            }
         </header>
     )
 }

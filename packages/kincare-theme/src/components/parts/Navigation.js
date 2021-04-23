@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { connect, styled } from 'frontity'
 import Link from '@frontity/components/link'
-import { gsap } from 'gsap'
 
 import logo from '../../img/logo.png'
 
@@ -52,6 +51,7 @@ const Navigation = ({ state }) => {
             text-decoration:none;
             position:relative;
             border-top:1px solid ${state.theme.colors.lightGrayBlue};
+            text-align:left;
             @media (min-width: ${mobileBreakpoint}) {
                 display:inline-block;
                 font-size:18px;
@@ -121,7 +121,6 @@ const Navigation = ({ state }) => {
         }
     `
 
-
     const [showMobileMenu, setShowMobileMenu] = useState(false)
     const toggleMobileMenu = () => {
         setShowMobileMenu(!showMobileMenu)
@@ -137,7 +136,9 @@ const Navigation = ({ state }) => {
 
     return (
         <>
-            <MobileMenuButton onClick={() => toggleMobileMenu()}>MENU</MobileMenuButton>
+            <MobileMenuButton onClick={() => toggleMobileMenu()}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+            </MobileMenuButton>
             <NavigationList id="main-navigation" ref={navRef}>
                 <NavigationItem className="mobile-logo">
                     <img src={logo} />
