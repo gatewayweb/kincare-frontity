@@ -5,6 +5,12 @@
     font-family: 'Lato', 'sans-serif';
 }
 
+a {
+    color:#2A58A7;
+    text-decoration:none;
+    font-size:16px;
+}
+
 .kc-header {
     padding-top:2rem;
     transition:all 500ms;
@@ -26,6 +32,19 @@
     background: rgb(255,255,255);
     background: rgba(255,255,255,0.75);
     z-index:0;
+}
+.header-svg {
+    margin-top:3rem;
+}
+.header-svg-2 {
+    transform:rotate(-2deg);
+    position:absolute;
+    left:0;
+    top:-30px;
+    opacity:0.5;
+}
+.header-svg-wrap {
+    position:relative;
 }
 
 .hero-content {
@@ -57,5 +76,8 @@ h1, h2, h1 > *, h2 > * {
     }
     .site-logo {
         width:auto;
+    }
+    .header-svg {
+        margin-top:0;
     }
 }

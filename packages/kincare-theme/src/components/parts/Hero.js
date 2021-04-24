@@ -39,7 +39,7 @@ const Hero = ({ hero }) => {
     return (
         <>
         {hero ?
-                <div className="col col-12 col-lg-8 col-xxl-8 px-4 px-md-5">
+                <div className="col col-12 col-lg-8 col-xxl-8">
                     <HeroTitle className="hero-animate">
                         {hero.title}
                         {hero.title_two ?

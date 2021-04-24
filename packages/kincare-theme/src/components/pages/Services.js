@@ -1,34 +1,23 @@
 import React from 'react'
 import { connect, styled } from 'frontity'
 
+import HeaderPattern from '../parts/HeaderPattern'
+import ContentContainer from '../parts/ContentContainer'
+
 const Services = ({ state, page }) => {
 
     const { title, subtitle, services } = page.acf
-
-    const Content = styled.section`
-        background-color:${state.theme.colors.lightGrayBlue};
-        padding:4rem 1rem;
-        margin-top:3rem;
-        h1 {
-            font-weight:${state.theme.weight.black};
-            font-size:3rem;
-        }
-        .subtitle {
-            font-size:1.5rem;
-        }
-    `
 
     const Service = styled.article`
         color:${state.theme.colors.darkGray};
         background-color:#ffffff;
         padding:2rem;
-        margin-top:2rem;
+        margin-top:1rem;
         border-radius:8px;
         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
-        height:100%;
         transition:all 500ms;
-        max-height:800px;
         overflow:hidden;
+        position:relative;
         h3 {
             font-weight:${state.theme.weight.bold};
             color:${state.theme.colors.darkGray};
@@ -61,41 +50,46 @@ const Services = ({ state, page }) => {
         }
         &:hover {
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-            transform:translateY(-12px);
+            transform:translateY(-20px);
+        }
+        &.active {
+            max-height:10000px;
         }
     `
-
     return (
-        <Content>
-            <div className="container">
-                <div className="row justify-content-center pb-5">
-                    <div className="col col-12">
-                        <h1>{title}</h1>
-                        <div className="subtitle">{subtitle}</div>
+        <>
+            <HeaderPattern />
+            <ContentContainer>
+                <div className="container">
+                    <div className="row justify-content-center pb-5">
+                        <div className="col col-12">
+                            <h1>{title}</h1>
+                            <div className="subtitle">{subtitle}</div>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        {Object.values(services).map(service => {
+                            return (
+                                <div className="col col-12 col-md-6 pb-4 d-flex" key={service.name}>
+                                    <Service>
+                                        <div className="cover-image" style={{backgroundImage: `url(${service.image})` }}></div>
+                                        <h3>{service.name}</h3>
+                                        <p>{service.description}</p>
+                                        <ul>
+                                            {Object.values(service.bullets).map((point, index) => {
+                                                return (
+                                                    <li key={index}>{point.value}</li>
+                                                )
+                                            })}
+                                        </ul>
+                                    </Service>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
-                <div className="row justify-content-center">
-                    {Object.values(services).map(service => {
-                        return (
-                            <div className="col col-12 col-md-6 pb-4" key={service.name}>
-                                <Service>
-                                    <div className="cover-image" style={{backgroundImage: `url(${service.image})` }}></div>
-                                    <h3>{service.name}</h3>
-                                    <p>{service.description}</p>
-                                    <ul>
-                                        {Object.values(service.bullets).map((point, index) => {
-                                            return (
-                                                <li key={index}>{point.value}</li>
-                                            )
-                                        })}
-                                    </ul>
-                                </Service>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-        </Content>
+            </ContentContainer>
+        </>
     )
 }
 

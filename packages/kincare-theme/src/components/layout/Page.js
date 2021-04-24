@@ -16,9 +16,9 @@ const Page = ({ state, data }) => {
         switch(data.link) {
             case '/': return <Home data={data} page={page} />
             case '/services/': return <Services data={data} page={page} />
-            case '/resources/': return <Resources data={data} />
-            case '/testimonials/': return <Testimonials data={data} />
-            case '/contact-us/': return <Contact data={data} />
+            case '/resources/': return <Resources data={data} page={page} />
+            case '/testimonials/': return <Testimonials data={data} page={page} />
+            case '/contact-us/': return <Contact data={data} page={page} />
         }
     }
 

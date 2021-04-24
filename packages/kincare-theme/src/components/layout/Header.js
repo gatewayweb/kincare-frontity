@@ -6,7 +6,7 @@ import logo from '../../img/logo.png'
 import Navigation from '../parts/Navigation'
 import Hero from '../parts/Hero'
 
-const Header = ({ page }) => {
+const Header = ({ page, state }) => {
 
     return (
         <header

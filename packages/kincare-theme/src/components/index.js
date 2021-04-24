@@ -13,8 +13,8 @@ const Root = ({ state }) => {
 
     return (
         <>
-            <Global styles={css(styles)} />
             <Global styles={css(fixCss(bootstrapCss))} />
+            <Global styles={css(styles)} />
             <main>
                 <Switch>
                     <Loading when={data.isFetching} />
