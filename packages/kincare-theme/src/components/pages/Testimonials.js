@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { connect, styled } from 'frontity'
+import gsap from 'gsap'
 
 import HeaderPattern from '../parts/HeaderPattern'
 import ContentContainer from '../parts/ContentContainer'
 
 const Testimonials = ({ page, state }) => {
+    const contentRef = useRef(null)
     const { title, testimonials, call_to_action } = page.acf
 
     const Testimonial = styled.article`
@@ -17,6 +19,7 @@ const Testimonials = ({ page, state }) => {
         font-size:1.3rem;
         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
         transition:all 500ms;
+        transform-origin:top center;
         .quote {
             background-color:${state.theme.colors.orange};
             font-family: 'Abhaya Libre', serif;
@@ -42,19 +45,30 @@ const Testimonials = ({ page, state }) => {
         }
         &:hover {
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-            transform:translateY(-20px);
+            transform: translateY(-20px);
         }
     `
 
     const CallToActionLink = styled.a`
         font-size:2rem;
         font-weight:${state.theme.weight.bold};
+        text-decoration:underline;
     `
+
+    useEffect(() => {
+        gsap.from(
+            contentRef.current.querySelectorAll('.testimonial'),
+            {
+                rotate: 'random(-20, 10, 2)',
+                duration: 0.5
+            }
+        )
+    }, [])
 
     return (
         <>
             <HeaderPattern />
-            <ContentContainer>
+            <ContentContainer ref={contentRef}>
                 <div className="container">
                     <div className="row justify-content-center pb-5">
                         <div className="col col-12">
@@ -62,19 +76,23 @@ const Testimonials = ({ page, state }) => {
                         </div>
                     </div>
                     <div className="row g-xl-5">
-                        {Object.values(testimonials).map((testimonial, index) => {
-                            return (
-                                <div className="col col-12 col-md-6 col-xl-4" key={index}>
-                                    <Testimonial>
-                                        <div className="quote">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
-                                        </div>
-                                        {testimonial.text}
-                                        <div className="name">{testimonial.name}</div>
-                                    </Testimonial>
-                                </div>
-                            )
-                        })}
+                        {testimonials && testimonials.length ?
+                            Object.values(testimonials).map((testimonial, index) => {
+                                return (
+                                    <div className="col col-12 col-md-6 col-xl-4" key={index}>
+                                        <Testimonial className="testimonial">
+                                            <div className="quote">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#ffffff" d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+                                            </div>
+                                            {testimonial.text}
+                                            <div className="name">{testimonial.name}</div>
+                                        </Testimonial>
+                                    </div>
+                                )
+                            })
+                            :
+                            <></>
+                        }
                     </div>
                     <div className="row">
                         <div className="col col-12 text-center">

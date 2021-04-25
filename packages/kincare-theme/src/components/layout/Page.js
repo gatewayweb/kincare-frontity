@@ -8,6 +8,7 @@ import Services from '../pages/Services'
 import Resources from '../pages/Resources'
 import Testimonials from '../pages/Testimonials'
 import Contact from '../pages/Contact'
+import Careers from '../pages/Careers'
 
 const Page = ({ state, data }) => {
     const page = state.source[data.type][data.id]
@@ -18,6 +19,7 @@ const Page = ({ state, data }) => {
             case '/services/': return <Services data={data} page={page} />
             case '/resources/': return <Resources data={data} page={page} />
             case '/testimonials/': return <Testimonials data={data} page={page} />
+            case '/careers/': return <Careers data={data} page={page} />
             case '/contact-us/': return <Contact data={data} page={page} />
         }
     }

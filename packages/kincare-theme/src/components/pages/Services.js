@@ -68,24 +68,28 @@ const Services = ({ state, page }) => {
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        {Object.values(services).map(service => {
-                            return (
-                                <div className="col col-12 col-md-6 pb-4 d-flex" key={service.name}>
-                                    <Service>
-                                        <div className="cover-image" style={{backgroundImage: `url(${service.image})` }}></div>
-                                        <h3>{service.name}</h3>
-                                        <p>{service.description}</p>
-                                        <ul>
-                                            {Object.values(service.bullets).map((point, index) => {
-                                                return (
-                                                    <li key={index}>{point.value}</li>
-                                                )
-                                            })}
-                                        </ul>
-                                    </Service>
-                                </div>
-                            )
-                        })}
+                        {services && services.length ?
+                            Object.values(services).map(service => {
+                                return (
+                                    <div className="col col-12 col-md-6 pb-4 d-flex" key={service.name}>
+                                        <Service>
+                                            <div className="cover-image" style={{backgroundImage: `url(${service.image})` }}></div>
+                                            <h3>{service.name}</h3>
+                                            <p>{service.description}</p>
+                                            <ul>
+                                                {Object.values(service.bullets).map((point, index) => {
+                                                    return (
+                                                        <li key={index}>{point.value}</li>
+                                                    )
+                                                })}
+                                            </ul>
+                                        </Service>
+                                    </div>
+                                )
+                            })
+                            :
+                            <></>
+                        }
                     </div>
                 </div>
             </ContentContainer>
