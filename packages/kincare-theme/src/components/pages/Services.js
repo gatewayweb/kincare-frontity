@@ -11,7 +11,7 @@ const Services = ({ state, page }) => {
     const Service = styled.article`
         color:${state.theme.colors.darkGray};
         background-color:#ffffff;
-        padding:2rem;
+        padding:1rem;
         margin-top:1rem;
         border-radius:8px;
         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
@@ -35,7 +35,7 @@ const Services = ({ state, page }) => {
         .cover-image {
             border-radius:8px;
             width:100%;
-            height:300px;
+            height:200px;
             background-size:cover;
             background-repeat:no-repeat;
         }
@@ -54,6 +54,12 @@ const Services = ({ state, page }) => {
         }
         &.active {
             max-height:10000px;
+        }
+        @media (min-width: 768px) {
+            padding:2rem;
+            .cover-image {
+                height:300px;
+            }
         }
     `
     return (

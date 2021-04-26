@@ -37,14 +37,15 @@ a {
     margin-top:3rem;
 }
 .header-svg-2 {
-    transform:rotate(-2deg);
     position:absolute;
-    left:0;
-    top:-30px;
+    top:-20px;
     opacity:0.5;
+    width:90%;
+    right:0;
 }
 .header-svg-wrap {
     position:relative;
+    width:100%;
 }
 
 .hero-content {

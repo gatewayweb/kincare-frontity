@@ -2,6 +2,7 @@ import React from 'react'
 import { connect, Head } from 'frontity'
 
 import Header from './Header'
+import Footer from './Footer'
 
 import Home from '../pages/Home'
 import Services from '../pages/Services'
@@ -28,15 +29,10 @@ const Page = ({ state, data }) => {
         <>
             <Head><title>{page.title.rendered} | KinCare at Home</title></Head>
             <div className={`${page && page.acf && page.acf.hero ? '' : 'container'}`}>
-                <div>
-                    <Header data={data} page={page} />
-                </div>
+                <Header data={data} page={page} />
             </div>
-            <div>
-                <div>
-                    {data.isPage && renderPage()}
-                </div>
-            </div>
+            {data.isPage && renderPage()}
+            <Footer />
         </>
     )
 }

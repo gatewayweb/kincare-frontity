@@ -1,0 +1,94 @@
+import React from 'react'
+import { connect, styled } from 'frontity'
+import Link from '@frontity/components/link'
+
+import logo from '../../img/logo.png'
+import hcaLogo from '../../img/home-care-alliance.png'
+
+const stripLink = (string) => {
+    return string.replace(/\//ig, '')
+}
+
+const Footer = ({ state }) => {
+    
+    const StyledFooter = styled.footer`
+        padding:3rem 0;
+        .copy-bottom {
+            color:${state.theme.colors.mediumGray};
+            font-size:0.9rem;
+            text-transform:uppercase;
+            letter-spacing:1px;
+        }
+        .contact-links-bottom {
+            a {
+                display:inline-block;
+                border-radius:8px;
+                border:1px solid ${state.theme.colors.lightGray};
+                color:${state.theme.colors.mediumGray};
+                font-size:1.2rem;
+                padding:1rem 1.5rem;
+                margin:0 0.5rem;
+                @media (min-width: 992px) {
+                    font-size:1.4rem;
+                }
+            }
+        }
+    `
+
+    const NavigationList = styled.ul`
+        list-style:none;
+        padding:2rem 0;
+        li {
+            display:inline-block;
+            a {
+                color:${state.theme.colors.mediumGray};
+                font-size:0.9rem;
+                text-transform:uppercase;
+                padding:0.5rem 0.5rem;
+                display:inline-block;
+                letter-spacing:1px;
+            }
+        }
+        @media (min-width: 992px) {
+            padding:0;
+        }
+    `
+
+    return (
+        <StyledFooter>
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col col-6 col-lg-2 d-flex justify-content-center justify-content-lg-start">
+                        <img className="img-fluid mb-5 mb-lg-0" src={logo} />
+                    </div>
+                    <div className="col col-12 col-lg-8 text-center order-last order-lg-0">
+                        <h3>Care in the comfort of your own home.</h3>
+                        <NavigationList>
+                            {state.theme.menu.map(link => {
+                                // console.log(stripLink(state.router.link), stripLink(link[1]))
+                                let linkClass = stripLink(link[1]) === stripLink(state.router.link) ? 'active' : ''
+                                return (
+                                    <li key={link[0]} onClick={() => toggleMobileMenu()}>
+                                        <Link link={link[1]} className={linkClass}>{link[0]}</Link>
+                                    </li>
+                                )
+                            })}
+                        </NavigationList>
+                        <div className="mt-3 contact-links-bottom">
+                            <Link className="mb-4 mb-md-0" link='/'>617-564-2345</Link>
+                            <Link link='/test'>info@kincareathome.com</Link>
+                        </div>
+                        <div className="mt-4 copy-bottom">
+                            Copyright &copy; Kincareathome.com All Rights Reserved.
+                        </div>
+                    </div>
+                    <div className="col col-6 col-lg-2 d-flex justify-content-end">
+                        <img className="img-fluid mb-5 mb-lg-0" src={hcaLogo} />
+                    </div>
+                </div>
+            </div>
+        </StyledFooter>
+    )
+}
+
+export default connect(Footer)

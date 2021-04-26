@@ -1,11 +1,26 @@
 import React from 'react'
+import { connect, styled } from 'frontity'
 
-const Contact = () => {
+import HeaderPattern from '../parts/HeaderPattern'
+import ContentContainer from '../parts/ContentContainer'
+
+const Contact = ({ page }) => {
+    const { title, subtitle } = page.acf
+
     return (
-        <div>
-            <h1>Contact</h1>
-        </div>
+        <>
+            <HeaderPattern />
+            <ContentContainer>
+                <div className="container">
+                    <div className="row justify-content-center pb-5">
+                        <div className="col col-12">
+                            <h1>Contact Us</h1>
+                        </div>
+                    </div>
+                </div>
+            </ContentContainer>
+        </>
     )
 }
 
-export default Contact
+export default connect(Contact)

@@ -14,6 +14,20 @@ const Careers = ({ state, page }) => {
         padding:3rem;
         margin-bottom:4rem;
         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+        border-right:1px solid #92badd;
+        border-top:1px solid #92badd;
+        position:relative;
+        &:before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            border-style: solid;
+            background: #92badd;
+            border-width: 20px;
+            border-color: ${state.theme.colors.lightGrayBlue} ${state.theme.colors.lightGrayBlue} transparent transparent;
+            border-radius: 0 0 0 8px;
+        }
         h3 {
             font-weight:${state.theme.weight.black};
             margin-bottom:2rem;
@@ -33,6 +47,9 @@ const Careers = ({ state, page }) => {
                 display:inline-block;
             }
         }
+        .form-group {
+            margin-top:2rem;
+        }
     `
 
     return (
@@ -48,8 +65,7 @@ const Careers = ({ state, page }) => {
                     </div>
                     <div className="row">
                         {jobs && jobs.length ?
-                            Object.values(jobs.map((job, index) => {
-                                return (
+                            Object.values(jobs.map((job, index) => (
                                     <div className="col col-12" key={index}>
                                         <JobPost>
                                             <h3>{job.title}</h3>
@@ -67,10 +83,42 @@ const Careers = ({ state, page }) => {
                                         </JobPost>
                                     </div>
                                 )
-                            }))
+                            ))
                             :
                             <></>
                         }
+                    </div>
+                    <div className="row">
+                        <JobPost>
+                            <h2>Interested? Apply Now</h2>
+                            <div className="col col-12 col-md-6">
+                                <div className="form-group">
+                                    <label for="apply-name">Job</label>
+                                    <select id="apply-name" className="form-control form-control-lg" type="text" placeholder="Your Job" aria-label="Job">
+                                        <option selected disabled>Select a Job</option>
+                                        {jobs && jobs.length ?
+                                            Object.values(jobs.map((job, index) => (
+                                                <option key={index} value={job.title}>{job.title}</option>
+                                                )
+                                            ))
+                                            :
+                                            <></>
+                                        }
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label for="apply-name">Your Name</label>
+                                    <input id="apply-name" className="form-control form-control-lg" type="text" placeholder="Your Name" aria-label="Name" />
+                                </div>
+                                <div className="form-group">
+                                    <label for="apply-email">Your Email</label>
+                                    <input id="apply-email" className="form-control form-control-lg" type="email" placeholder="Your Email" aria-label="Email" />
+                                </div>  
+                                <div className="form-group">
+                                    <Button type="submit">Apply</Button>
+                                </div>
+                            </div>
+                        </JobPost>
                     </div>
                 </div>
             </ContentContainer>

@@ -2,24 +2,44 @@
   "errors": [],
   "warnings": [],
   "version": "4.46.0",
-  "hash": "c71bccabb40b3024f30f",
+  "hash": "b1b943383ad348975d40",
   "publicPath": "/static/",
   "outputPath": "/home/sam/Desktop/Sites/kincare-frontity/build/static",
   "assetsByChunkName": {
     "kincare-frontity": [
       "kincare-frontity.module.js",
-      "kincare-frontity.e20708d98451874f9d98.hot-update.js"
+      "kincare-frontity.4468f9422d230d75b4ea.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "e20708d98451874f9d98.hot-update.json",
+      "name": "4468f9422d230d75b4ea.hot-update.json",
       "size": 58,
       "chunks": [],
       "chunkNames": [],
       "info": {
         "hotModuleReplacement": true,
         "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/dots-square.png",
+      "size": 372,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/kincare-theme/src/img/dots-square.png"
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/home-care-alliance.png",
+      "size": 15486,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/kincare-theme/src/img/home-care-alliance.png"
       },
       "emitted": false
     },
@@ -34,8 +54,8 @@
       "emitted": false
     },
     {
-      "name": "kincare-frontity.e20708d98451874f9d98.hot-update.js",
-      "size": 17203,
+      "name": "kincare-frontity.4468f9422d230d75b4ea.hot-update.js",
+      "size": 28815,
       "chunks": [
         "kincare-frontity"
       ],
@@ -50,7 +70,7 @@
     },
     {
       "name": "kincare-frontity.module.js",
-      "size": 8234254,
+      "size": 8288630,
       "chunks": [
         "kincare-frontity"
       ],
@@ -69,7 +89,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.e20708d98451874f9d98.hot-update.js"
+        "kincare-frontity.4468f9422d230d75b4ea.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -82,7 +102,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.e20708d98451874f9d98.hot-update.js"
+        "kincare-frontity.4468f9422d230d75b4ea.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -94,15 +114,15 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 2212579,
+      "size": 2242957,
       "names": [
         "kincare-frontity"
       ],
       "files": [
         "kincare-frontity.module.js",
-        "kincare-frontity.e20708d98451874f9d98.hot-update.js"
+        "kincare-frontity.4468f9422d230d75b4ea.hot-update.js"
       ],
-      "hash": "932a3ec783088953bf4a",
+      "hash": "958070e51e9dec0a35d6",
       "siblings": [],
       "parents": [],
       "children": [],

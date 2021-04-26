@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import ContactForm from '../parts/ContactForm'
+import dotsSquare from '../../img/dots-square.png'
 
 const Home = ({ state, page }) => {
     gsap.registerPlugin(ScrollTrigger);
@@ -49,6 +50,25 @@ const Home = ({ state, page }) => {
             font-weight: 400;
             line-height: 22px;
             letter-spacing: 0em;
+        }
+        .image-container {
+            position:relative;
+            .dots-1 {
+                width:170px;
+                height:170px;
+                position:absolute;
+                z-index:-1;
+                left:-60px;
+                bottom:-25px;
+            }
+            .dots-2 {
+                width:170px;
+                height:170px;
+                position:absolute;
+                z-index:-1;
+                right:-10px;
+                top:10px;
+            }
         }
     `
 
@@ -228,7 +248,15 @@ const Home = ({ state, page }) => {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col col-12 col-xl-4">
-                            <img className="img-fluid" src={what_we_offer.image} />
+                            <div className="image-container">
+                                <div className="dots-1">
+                                    <img src={dotsSquare} />
+                                </div>
+                                <div className="dots-2">
+                                    <img src={dotsSquare} />
+                                </div>
+                                <img className="img-fluid" src={what_we_offer.image} />
+                            </div>
                         </div>
                         <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
                             <h2 className="mt-3 mt-md-0">{what_we_offer.title}</h2>
