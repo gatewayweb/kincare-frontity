@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { connect, styled } from 'frontity'
 
 import HeaderPattern from '../parts/HeaderPattern'
@@ -6,6 +6,8 @@ import ContentContainer from '../parts/ContentContainer'
 import Button from '../parts/Button'
 
 const Careers = ({ state, page }) => {
+    const applyNowRef = useRef(null)
+
     const { title, subtitle, jobs } = page.acf
 
     const JobPost = styled.article`
@@ -78,7 +80,11 @@ const Careers = ({ state, page }) => {
                                                 <div>{job.requirements}</div>
                                             </div>
                                             <div className="job-item">
-                                                <Button className="orange">Apply Now</Button>
+                                                <Button
+                                                    className="orange"
+                                                    onClick={() => {
+                                                        applyNowRef.current.scrollIntoView({ behavior: 'smooth' });
+                                                    }}>Apply Now</Button>
                                             </div>
                                         </JobPost>
                                     </div>
@@ -89,7 +95,7 @@ const Careers = ({ state, page }) => {
                         }
                     </div>
                     <div className="row">
-                        <JobPost>
+                        <JobPost ref={applyNowRef}>
                             <h2>Interested? Apply Now</h2>
                             <div className="col col-12 col-md-6">
                                 <div className="form-group">
