@@ -348,6 +348,7 @@ const Home = ({ state, page }) => {
             </WhyUs>
             
             <ContactSection>
+                <h2>Get In Touch</h2>
                 <ContactForm />
             </ContactSection>
         </div>

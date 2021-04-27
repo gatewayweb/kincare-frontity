@@ -77,7 +77,7 @@ const Services = ({ state, page }) => {
                         {services && services.length ?
                             Object.values(services).map(service => {
                                 return (
-                                    <div className="col col-12 col-md-6 pb-4 d-flex" key={service.name}>
+                                    <div className="col col-12 col-lg-6 pb-4 d-flex" key={service.name}>
                                         <Service>
                                             <div className="cover-image" style={{backgroundImage: `url(${service.image})` }}></div>
                                             <h3>{service.name}</h3>

@@ -3,6 +3,7 @@ import { connect, styled } from 'frontity'
 
 import HeaderPattern from '../parts/HeaderPattern'
 import ContentContainer from '../parts/ContentContainer'
+import ContactForm from '../parts/ContactForm'
 
 const Contact = ({ page }) => {
     const { title, subtitle } = page.acf
@@ -15,6 +16,7 @@ const Contact = ({ page }) => {
                     <div className="row justify-content-center pb-5">
                         <div className="col col-12">
                             <h1>Contact Us</h1>
+                            <ContactForm />
                         </div>
                     </div>
                 </div>

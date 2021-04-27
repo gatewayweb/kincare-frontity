@@ -66,6 +66,11 @@ h1, h2, h1 > *, h2 > * {
     width:150px;
     max-width:100%;
 }
+.show-mobile-menu {
+    position:fixed;
+    width:100%;
+    height:100vh;
+}
 
 @media (min-width: 768px) {
     .kc-hero {
@@ -80,5 +85,11 @@ h1, h2, h1 > *, h2 > * {
     }
     .header-svg {
         margin-top:0;
+    }
+}
+@media (min-width: 992px) {
+    .show-mobile-menu {
+        position:static;
+        height:auto;
     }
 }

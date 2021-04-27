@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { connect, styled } from 'frontity'
 import Link from '@frontity/components/link'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+
 
 import logo from '../../img/logo.png'
 
@@ -122,27 +124,32 @@ const Navigation = ({ state }) => {
     `
 
     const [showMobileMenu, setShowMobileMenu] = useState(false)
-    const toggleMobileMenu = () => {
-        setShowMobileMenu(!showMobileMenu)
+    const toggleMobileMenu = (closeMenu) => {
+        let showMenu = closeMenu ? false : !showMobileMenu
+        setShowMobileMenu(showMenu)
     }
 
     useEffect(() => {
+        clearAllBodyScrollLocks()
         if(showMobileMenu) {
             navRef.current.classList.add('show')
+            disableBodyScroll(navRef.current)
         } else {
+            console.log('hide menu')
             navRef.current.classList.remove('show')
+            enableBodyScroll(navRef.current)
         }
     }, [showMobileMenu])
 
     return (
         <>
-            <MobileMenuButton onClick={() => toggleMobileMenu()}>
+            <MobileMenuButton onClick={() => toggleMobileMenu(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill={state.theme.colors.darkBlue} d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
             </MobileMenuButton>
             <NavigationList id="main-navigation" ref={navRef}>
                 <NavigationItem className="mobile-logo">
                     <img src={logo} />
-                    <button onClick={() => toggleMobileMenu()}>
+                    <button onClick={() => toggleMobileMenu(false)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
                     </button>
                 </NavigationItem>
@@ -150,8 +157,8 @@ const Navigation = ({ state }) => {
                     // console.log(stripLink(state.router.link), stripLink(link[1]))
                     let linkClass = stripLink(link[1]) === stripLink(state.router.link) ? 'active' : ''
                     return (
-                        <NavigationItem key={link[0]} onClick={() => toggleMobileMenu()}>
-                            <Link link={link[1]} className={linkClass}>{link[0]}</Link>
+                        <NavigationItem key={link[0]}>
+                            <Link  onClick={() => toggleMobileMenu(true)} link={link[1]} className={linkClass}>{link[0]}</Link>
                         </NavigationItem>
                     )
                 })}

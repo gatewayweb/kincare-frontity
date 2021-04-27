@@ -28,8 +28,12 @@ const Footer = ({ state }) => {
                 font-size:1.2rem;
                 padding:1rem 1.5rem;
                 margin:0 0.5rem;
+                transition:all 250ms;
                 @media (min-width: 992px) {
                     font-size:1.4rem;
+                }
+                &:hover {
+                    border-color:${state.theme.colors.mediumGray};
                 }
             }
         }
@@ -47,6 +51,9 @@ const Footer = ({ state }) => {
                 padding:0.5rem 0.5rem;
                 display:inline-block;
                 letter-spacing:1px;
+                &:hover {
+                    color:${state.theme.colors.darkGray};
+                }
             }
         }
         @media (min-width: 992px) {
