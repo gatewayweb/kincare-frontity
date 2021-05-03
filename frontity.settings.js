@@ -59,8 +59,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://kincare.gatewayweb.net",
-          "api": "https://kincare.gatewayweb.net/wp-json",
+          "url": "https://kincare.gatewayweb.net/",
+          "api": "https://kincare.gatewayweb.net/wp-json/",
           "homepage": "/home",
           "postsPage": "/blog"
         }
@@ -68,7 +68,8 @@ const settings = {
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
-    "@frontity/yoast"
+    "@frontity/yoast",
+    "@aamodtgroup/frontity-contact-form-7"
   ]
 };
 

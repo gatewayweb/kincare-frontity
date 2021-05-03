@@ -4,6 +4,7 @@ import frontity__wp_source_default from "@frontity/wp-source/src/index";
 import frontity__tiny_router_default from "@frontity/tiny-router/src/index";
 import frontity__html2react_default from "@frontity/html2react/src/index";
 import frontity__yoast_default from "@frontity/yoast/src/index";
+import aamodtgroup__frontity_contact_form_7_default from "@aamodtgroup/frontity-contact-form-7/src/index";
 
 const packages = {
   kincare_theme_default,
@@ -11,6 +12,7 @@ const packages = {
   frontity__tiny_router_default,
   frontity__html2react_default,
   frontity__yoast_default,
+  aamodtgroup__frontity_contact_form_7_default,
 };
 
 export default client({ packages });
@@ -24,6 +26,7 @@ if (module["hot"]) {
       "@frontity/tiny-router/src/index",
       "@frontity/html2react/src/index",
       "@frontity/yoast/src/index",
+      "@aamodtgroup/frontity-contact-form-7/src/index",
     ],
     () => {
       const client = require("@frontity/core/src/client").default;
@@ -32,12 +35,14 @@ if (module["hot"]) {
       const frontity__tiny_router_default = require("@frontity/tiny-router/src/index").default;
       const frontity__html2react_default = require("@frontity/html2react/src/index").default;
       const frontity__yoast_default = require("@frontity/yoast/src/index").default;
+      const aamodtgroup__frontity_contact_form_7_default = require("@aamodtgroup/frontity-contact-form-7/src/index").default;
       const packages = {
         kincare_theme_default,
         frontity__wp_source_default,
         frontity__tiny_router_default,
         frontity__html2react_default,
         frontity__yoast_default,
+        aamodtgroup__frontity_contact_form_7_default,
       };
       client({ packages });
     }
