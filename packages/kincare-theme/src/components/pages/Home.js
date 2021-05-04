@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ContactForm from '../parts/ContactForm'
 import dotsSquare from '../../img/dots-square.png'
 
-const Home = ({ state, page }) => {
+const Home = ({ data, state, page }) => {
     gsap.registerPlugin(ScrollTrigger);
 
     const homeRefs = useRef(null)
@@ -348,8 +348,10 @@ const Home = ({ state, page }) => {
             </WhyUs>
             
             <ContactSection>
-                <h2>Get In Touch</h2>
-                <ContactForm />
+                <div className="container">
+                    <h2>Get In Touch</h2>
+                    <ContactForm data={data} />
+                </div>
             </ContactSection>
         </div>
     )

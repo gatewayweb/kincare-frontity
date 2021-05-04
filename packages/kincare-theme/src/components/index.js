@@ -7,6 +7,7 @@ import styles from '../styles.css'
 import Page from './layout/Page'
 import { fixCss } from '../helpers/css'
 import Loading from './parts/Loading'
+import Resources from './pages/Resources'
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -19,6 +20,7 @@ const Root = ({ state }) => {
                 <Switch>
                     <Loading when={data.isFetching} />
                     <Page when={data.isPage} data={data} />
+                    <Page when={data.isArchive} data={data} pageData={{ title: { rendered: 'Resources' } }} PageComponent={Resources} />
                 </Switch>
             </main>
         </>

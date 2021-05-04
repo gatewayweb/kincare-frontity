@@ -62,7 +62,7 @@ const settings = {
           "url": "https://kincare.gatewayweb.net/",
           "api": "https://kincare.gatewayweb.net/wp-json/",
           "homepage": "/home",
-          "postsPage": "/blog"
+          "postsPage": "/resources"
         }
       }
     },
