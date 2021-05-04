@@ -14,8 +14,11 @@ const Contact = ({ data, page }) => {
             <ContentContainer>
                 <div className="container">
                     <div className="row justify-content-center pb-5">
+                        <div className="col col-12 pb-4">
+                            <h1>{title}</h1>
+                            <div className="subtitle">{subtitle}</div>
+                        </div>
                         <div className="col col-12">
-                            <h1>{page.title.rendered}</h1>
                             <ContactForm data={data} />
                         </div>
                     </div>
