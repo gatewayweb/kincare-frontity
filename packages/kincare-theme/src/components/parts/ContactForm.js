@@ -27,7 +27,7 @@ const ContactForm = ({ state, libraries }) => {
     
     return (
         <StyledForm>
-            {contactPage && contactPage.content ? <Html2React html={contactPage.content.rendered}></Html2React> : <></>}
+            {contactPage && contactPage.content ? <Html2React html={contactPage.content.rendered} /> : <></>}
         </StyledForm>
     )
 }

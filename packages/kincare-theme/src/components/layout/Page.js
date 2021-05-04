@@ -3,6 +3,7 @@ import { connect, Head } from 'frontity'
 
 import Header from './Header'
 import Footer from './Footer'
+import Post from '../layout/Post'
 
 import Home from '../pages/Home'
 import Services from '../pages/Services'
@@ -30,6 +31,7 @@ const Page = ({ state, data, pageData, PageComponent }) => {
                 <Header data={data} page={page} />
             </div>
             {data.isPage && renderPage()}
+            {data.isPost && <Post data={data} post={page} />}
             {PageComponent ? <PageComponent data={data} page={page} /> : <></>}
             <Footer />
         </>

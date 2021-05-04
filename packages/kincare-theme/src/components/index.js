@@ -6,7 +6,6 @@ import bootstrapCss from 'bootstrap/dist/css/bootstrap.min.css';
 import { fixCss } from '../helpers/css'
 import styles from '../styles.css'
 import Page from './layout/Page'
-import Post from './layout/Post'
 import Loading from './parts/Loading'
 import Resources from './pages/Resources'
 
@@ -20,9 +19,8 @@ const Root = ({ state }) => {
             <main>
                 <Switch>
                     <Loading when={data.isFetching} />
-                    <Page when={data.isPage} data={data} />
+                    <Page when={data.isPage || data.isPost} data={data} />
                     <Page when={data.isArchive} data={data} pageData={{ title: { rendered: 'Resources' } }} PageComponent={Resources} />
-                    <Post when={data.isPost} data={data} />
                 </Switch>
             </main>
         </>
