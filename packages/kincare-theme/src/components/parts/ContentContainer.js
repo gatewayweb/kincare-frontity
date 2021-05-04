@@ -18,6 +18,13 @@ const ContentContainer = styled.section`
             left:8px;
             bottom:-15px;
         }
+        &.text-center {
+            &:after {
+                height:5px;
+                width:120px;
+                left:calc(50% - 60px);
+            }
+        }
     }
     .subtitle {
         font-size:1.5rem;

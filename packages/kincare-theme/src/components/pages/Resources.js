@@ -20,7 +20,7 @@ const Resources = ({ state, data, page }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col col-12">
-                            <h1>Resources</h1>
+                            <h1>{page.title.rendered}</h1>
                         </div>
                     </div>
                     <div className="row">
