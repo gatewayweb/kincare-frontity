@@ -2,18 +2,18 @@
   "errors": [],
   "warnings": [],
   "version": "4.46.0",
-  "hash": "a8afe76a2ca14a3633db",
+  "hash": "c86df9ef0e9f0e909785",
   "publicPath": "/static/",
   "outputPath": "/home/sam/Desktop/Sites/kincare-frontity/build/static",
   "assetsByChunkName": {
     "kincare-frontity": [
       "kincare-frontity.module.js",
-      "kincare-frontity.3e8931c35b73bd478610.hot-update.js"
+      "kincare-frontity.a4503107ad7e7d03cf12.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "3e8931c35b73bd478610.hot-update.json",
+      "name": "a4503107ad7e7d03cf12.hot-update.json",
       "size": 58,
       "chunks": [],
       "chunkNames": [],
@@ -54,8 +54,8 @@
       "emitted": false
     },
     {
-      "name": "kincare-frontity.3e8931c35b73bd478610.hot-update.js",
-      "size": 10429,
+      "name": "kincare-frontity.a4503107ad7e7d03cf12.hot-update.js",
+      "size": 3399,
       "chunks": [
         "kincare-frontity"
       ],
@@ -70,7 +70,7 @@
     },
     {
       "name": "kincare-frontity.module.js",
-      "size": 8456579,
+      "size": 8460787,
       "chunks": [
         "kincare-frontity"
       ],
@@ -89,7 +89,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.3e8931c35b73bd478610.hot-update.js"
+        "kincare-frontity.a4503107ad7e7d03cf12.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -102,7 +102,7 @@
       ],
       "assets": [
         "kincare-frontity.module.js",
-        "kincare-frontity.3e8931c35b73bd478610.hot-update.js"
+        "kincare-frontity.a4503107ad7e7d03cf12.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -114,15 +114,15 @@
       "rendered": true,
       "initial": true,
       "entry": true,
-      "size": 2293660,
+      "size": 2294396,
       "names": [
         "kincare-frontity"
       ],
       "files": [
         "kincare-frontity.module.js",
-        "kincare-frontity.3e8931c35b73bd478610.hot-update.js"
+        "kincare-frontity.a4503107ad7e7d03cf12.hot-update.js"
       ],
-      "hash": "c1bbec46e11495d263ba",
+      "hash": "f68886b53f9c9e2b5f2c",
       "siblings": [],
       "parents": [],
       "children": [],
