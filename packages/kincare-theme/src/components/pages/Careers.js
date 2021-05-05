@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { connect, styled } from 'frontity'
+import Link from '@frontity/components/link'
 
 import HeaderPattern from '../parts/HeaderPattern'
 import ContentContainer from '../parts/ContentContainer'
@@ -7,7 +8,7 @@ import Button from '../parts/Button'
 
 const Careers = ({ state, page }) => {
 
-    const { title, subtitle, jobs } = page.acf
+    const { title, subtitle, jobs, call_to_action } = page.acf
 
     const [applyForm, setApplyForm] = useState({
         job: jobs[0].title,
@@ -92,11 +93,9 @@ const Careers = ({ state, page }) => {
                                                 <div>{job.requirements}</div>
                                             </div>
                                             <div className="job-item">
-                                                <Button
-                                                    className="orange"
-                                                    onClick={() => {
-                                                        applyNowRef.current.scrollIntoView({ behavior: 'smooth' });
-                                                    }}>Apply Now</Button>
+                                                <Link link={call_to_action.link}>
+                                                    <Button className="orange">Apply Now</Button>
+                                                </Link>
                                             </div>
                                         </JobPost>
                                     </div>
@@ -105,67 +104,6 @@ const Careers = ({ state, page }) => {
                             :
                             <></>
                         }
-                    </div>
-                    <div className="row">
-                        <JobPost ref={applyNowRef}>
-                            <h2>Interested? Apply Now</h2>
-                            <form>
-                            <div className="col col-12 col-md-6">
-                                <div className="form-group">
-                                    <label htmlFor="apply-name">Job</label>
-                                    <select
-                                        name="job"
-                                        id="apply-name"
-                                        className="form-control form-control-lg"
-                                        type="text"
-                                        placeholder="Your Job"
-                                        aria-label="Job"
-                                        value={applyForm.job}
-                                        onChange={handleChange}
-                                    >
-                                        <option disabled>Select a Job</option>
-                                        {jobs && jobs.length ?
-                                            Object.values(jobs.map((job, index) => (
-                                                <option key={index} value={job.title}>{job.title}</option>
-                                                )
-                                            ))
-                                            :
-                                            <></>
-                                        }
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="apply-name">Your Name</label>
-                                    <input
-                                        name="name"
-                                        id="name"
-                                        className="form-control form-control-lg"
-                                        type="text"
-                                        placeholder="Your Name"
-                                        aria-label="Name"
-                                        value={applyForm.name}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="apply-email">Your Email</label>
-                                    <input
-                                        name="email"
-                                        id="email"
-                                        className="form-control form-control-lg"
-                                        type="email"
-                                        placeholder="Your Email"
-                                        aria-label="Email"
-                                        value={applyForm.email}
-                                        onChange={handleChange}
-                                    />
-                                </div>  
-                                <div className="form-group">
-                                    <Button type="submit">Apply</Button>
-                                </div>
-                            </div>
-                            </form>
-                        </JobPost>
                     </div>
                 </div>
             </ContentContainer>
