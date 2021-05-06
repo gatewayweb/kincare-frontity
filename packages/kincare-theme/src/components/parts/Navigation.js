@@ -135,7 +135,6 @@ const Navigation = ({ state }) => {
             navRef.current.classList.add('show')
             disableBodyScroll(navRef.current)
         } else {
-            console.log('hide menu')
             navRef.current.classList.remove('show')
             enableBodyScroll(navRef.current)
         }

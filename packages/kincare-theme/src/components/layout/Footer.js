@@ -60,6 +60,9 @@ const Footer = ({ state }) => {
             padding:0;
         }
     `
+    
+    const options = state.source.get('theme-options')
+    console.log(options)
 
     return (
         <StyledFooter>
