@@ -6,6 +6,8 @@ import HeaderPattern from '../parts/HeaderPattern'
 import ContentContainer from '../parts/ContentContainer'
 import Button from '../parts/Button'
 
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
 const Post = ({ state, post, libraries }) => {
     const Html2React = libraries.html2react.Component
 
@@ -25,6 +27,9 @@ const Post = ({ state, post, libraries }) => {
             padding:4rem;
         }
     `
+    
+    const modifiedDate = new Date(post.modified)
+    const formattedModifiedDate = `${months[modifiedDate.getMonth()]} ${modifiedDate.getDate()}, ${modifiedDate.getFullYear()}`
 
     return (
         <>
@@ -33,7 +38,10 @@ const Post = ({ state, post, libraries }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col col-12 text-center">
-                            <h1 className="text-center">{post.title.rendered}</h1>
+                            <h1 className="text-center">
+                                {post.title.rendered}
+                                <span class="post-date">{formattedModifiedDate}</span>
+                            </h1>
                             <StyledPost>
                                 <div className="post-content">
                                     <Html2React html={post.content.rendered} />

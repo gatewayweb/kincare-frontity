@@ -90,6 +90,17 @@ transition:all 250ms;
     box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.15);
 }
 
+.post-date {
+    font-size:1rem;
+    text-align:center;
+    display:block;
+    color:#555555;
+    font-family: 'Lato', 'sans-serif';
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
 @media (min-width: 768px) {
     .kc-hero {
         min-height:600px;

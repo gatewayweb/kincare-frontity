@@ -1,22 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { connect, styled } from 'frontity'
+import Link from '@frontity/components/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import ContactForm from '../parts/ContactForm'
+import Button from '../parts/Button'
 import dotsSquare from '../../img/dots-square.png'
 
 const Home = ({ data, state, page }) => {
     gsap.registerPlugin(ScrollTrigger);
 
     const homeRefs = useRef(null)
-
-    const [populated, setPopulated] = useState({
-        what_we_offer: false,
-        services: false,
-        mission: false,
-        why_us: false
-    })
 
     const { who_we_are, what_we_offer, services, our_mission, why_us } = page.acf
 
@@ -118,6 +113,10 @@ const Home = ({ data, state, page }) => {
             line-height:17px;
             letter-spacing:1px;
         }
+        img {
+            width:120px;
+            max-width:100%;
+        }
     `
 
     const Mission = styled.section`
@@ -154,6 +153,9 @@ const Home = ({ data, state, page }) => {
         border-radius:8px;
         text-align:center;
         margin-bottom:1rem;
+        width:100%;
+        flex-basis:100%;
+        transition:transform 300ms;
         h3 {
             font-size: 28px;
             font-weight: 900;
@@ -166,9 +168,14 @@ const Home = ({ data, state, page }) => {
         }
         img {
             margin-bottom:10px;
+            width:80px;
+            max-width:100%;
         }
         @media (min-width:992px) {
             margin-bottom:0;
+        }
+        &:hover {
+            transform:scale(1.05) !important;
         }
     `
 
@@ -178,7 +185,7 @@ const Home = ({ data, state, page }) => {
     `
 
     useEffect(() => {
-        gsap.fromTo(homeRefs.current.querySelectorAll('.service-box'),
+        gsap.fromTo(homeRefs.current.querySelectorAll('.services-btn, .service-box'),
             {
                 y: 500,
                 opacity: 0
@@ -211,7 +218,7 @@ const Home = ({ data, state, page }) => {
             }
         )
         
-        gsap.fromTo(homeRefs.current.querySelectorAll('.why-us-box'),
+        gsap.fromTo(homeRefs.current.querySelectorAll('.why-us-box, .why-us-btn'),
             {
                 opacity: 0,
                 scale: 0.5
@@ -261,6 +268,11 @@ const Home = ({ data, state, page }) => {
                         <div className="col col-12 col-xl-4 d-flex flex-column justify-content-center">
                             <h2 className="mt-3 mt-md-0">{what_we_offer.title}</h2>
                             <p>{what_we_offer.content}</p>
+                            <Link link='/services'>
+                                <Button className="orange">
+                                    Learn More
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -270,26 +282,33 @@ const Home = ({ data, state, page }) => {
                 <div className="container-lg">
                     <div className="row justify-content-center">
                         <div id="services-trigger"></div>
-                        <div className="col-12 col-md-4 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3 d-flex">
                             <ServiceBox className="service-box">
                                 <img src={services.service_1.icon} />
                                 <h3>{services.service_1.name}</h3>
                                 <p>{services.service_1.description}</p>
                             </ServiceBox>
                         </div>
-                        <div className="col-12 col-md-4 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3 d-flex">
                             <ServiceBox className="service-box" ref={homeRefs}>
                                 <img src={services.service_2.icon} />
                                 <h3>{services.service_2.name}</h3>
                                 <p>{services.service_2.description}</p>
                             </ServiceBox>
                         </div>
-                        <div className="col-12 col-md-4 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3 d-flex">
                             <ServiceBox className="service-box" ref={homeRefs}>
                                 <img src={services.service_3.icon} />
                                 <h3>{services.service_3.name}</h3>
                                 <p>{services.service_3.description}</p>
                             </ServiceBox>
+                        </div>
+                        <div class="col col-12 text-center pt-5">
+                            <Link link='/services'>
+                                <Button className="services-btn">
+                                    See More
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -317,21 +336,21 @@ const Home = ({ data, state, page }) => {
                         </div>
                     </div>
                     <div className="row justify-content-center pt-4">
-                        <div className="col-12 col-md-4 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3 d-flex">
                             <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_1.icon} />
                                 <h3>{why_us.reason_1.name}</h3>
                                 <p>{why_us.reason_1.description}</p>
                             </WhyUsBox>
                         </div>
-                        <div className="col-12 col-md-4 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3 d-flex">
                             <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_2.icon} />
                                 <h3>{why_us.reason_2.name}</h3>
                                 <p>{why_us.reason_2.description}</p>
                             </WhyUsBox>
                         </div>
-                        <div className="col-12 col-md-4 col-xl-3">
+                        <div className="col-12 col-md-4 col-xl-3 d-flex">
                             <WhyUsBox className="why-us-box">
                                 <img src={why_us.reason_3.icon} />
                                 <h3>{why_us.reason_3.name}</h3>
@@ -341,7 +360,11 @@ const Home = ({ data, state, page }) => {
                     </div>
                     <div className="row">
                         <div className="col pt-5 text-center">
-                            <a className="cta" href={why_us.cta.link_to}>{why_us.cta.link_text}</a>
+                            <Link className="cta why-us-btn" link='/services'>
+                                <Button className="orange">
+                                    {why_us.cta.link_text}
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { styled } from 'frontity'
+import Link from '@frontity/components/link'
 import gsap from 'gsap'
+
+import Button from './Button'
 
 const HeroTitle = styled.h1`
     font-size:36px;
@@ -51,6 +54,13 @@ const Hero = ({ hero }) => {
                         }
                     </HeroTitle>
                     <HeroSubtitle className="hero-animate">{hero.subtitle}</HeroSubtitle>
+                    <div className="pt-4">
+                        <Link link='/contact'>
+                            <Button className="orange">
+                                Get In Contact
+                            </Button>
+                        </Link>
+                    </div>
                 </div> :
             <></>
         }

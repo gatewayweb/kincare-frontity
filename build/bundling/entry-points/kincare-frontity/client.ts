@@ -44,7 +44,7 @@ if (module["hot"]) {
         frontity__yoast_default,
         aamodtgroup__frontity_contact_form_7_default,
       };
-      client({ packages });
+      client({ packages, isHmr: true });
     }
   );
 }

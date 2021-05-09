@@ -35,6 +35,7 @@ const ContentContainer = styled.section`
         right:0;
         top:0px;
     }
+
     @media (min-width: 768px) {
         padding-top:0;
         padding-bottom:3rem;

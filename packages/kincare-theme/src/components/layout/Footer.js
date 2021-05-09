@@ -9,7 +9,16 @@ const stripLink = (string) => {
     return string.replace(/\//ig, '')
 }
 
+const formatPhone = (phoneNumber) => {
+    let match = phoneNumber.match(/^(\d{3})(\d{3})(\d{4})$/)
+
+    return match ? `(${match[1]}) ${match[2]}-${match[3]}` : phoneNumber
+}
+
 const Footer = ({ state }) => {
+    
+    const options = state.source.get('theme-options')
+    const { contact_info } = options.acf
     
     const StyledFooter = styled.footer`
         padding:3rem 0;
@@ -60,9 +69,6 @@ const Footer = ({ state }) => {
             padding:0;
         }
     `
-    
-    const options = state.source.get('theme-options')
-    console.log(options)
 
     return (
         <StyledFooter>
@@ -85,8 +91,8 @@ const Footer = ({ state }) => {
                             })}
                         </NavigationList>
                         <div className="mt-3 contact-links-bottom">
-                            <Link className="mb-4 mb-md-0" link='/'>617-564-2345</Link>
-                            <Link link='/test'>info@kincareathome.com</Link>
+                            <Link className="mb-4 mb-md-0" link={`tel:+1-${contact_info.phone}`}>{formatPhone(contact_info.phone)}</Link>
+                            <Link link={`mailto:${contact_info.email}`}>{contact_info.email}</Link>
                         </div>
                         <div className="mt-4 copy-bottom">
                             Copyright &copy; Kincareathome.com All Rights Reserved.

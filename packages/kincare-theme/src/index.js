@@ -34,7 +34,7 @@ export default {
       beforeSSR: async ({ actions }) => {
         await Promise.all([
           actions.source.fetch("/contact-us"),
-          actions.source.fetch("/theme-options")
+          actions.source.fetch("theme-options")
         ])
       }
     }
