@@ -67,7 +67,7 @@ const Resources = ({ state, data, page, libraries }) => {
                         const formattedModifiedDate = `${months[modifiedDate.getMonth()]} ${modifiedDate.getDate()}, ${modifiedDate.getFullYear()}`
                         return (
                             <div className="col col-12 col-md-6 d-flex" key={item.id}>
-                                <Link className="resource-link d-flex w-100" link={post.link}>
+                                <Link className="resource-link d-flex w-100 mb-4" link={post.link}>
                                     <Resource>
                                         <h3><Html2React html={post.title.rendered} /></h3>
                                         <div className="post-resource-date">{formattedModifiedDate}</div>
