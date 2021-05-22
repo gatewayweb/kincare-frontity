@@ -39,11 +39,11 @@ const Post = ({ state, post, libraries }) => {
                     <div className="row">
                         <div className="col col-12 text-center">
                             <h1 className="text-center">
-                                {post.title.rendered}
+                                <Html2React html={post.title.rendered} />
                                 <span class="post-date">{formattedModifiedDate}</span>
                             </h1>
                             <StyledPost>
-                                <div className="post-content">
+                                <div className="post-content text-start">
                                     <Html2React html={post.content.rendered} />
                                 </div>
                             </StyledPost>

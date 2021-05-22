@@ -68,7 +68,7 @@ const Contact = ({ state, data, page }) => {
                                     width="600"
                                     height="450"
                                     style={{ border: 0 }}
-                                    allowfullscreen=""
+                                    allowFullScreen=""
                                     loading="lazy">
                                 </iframe>
                             </ContentBox>
